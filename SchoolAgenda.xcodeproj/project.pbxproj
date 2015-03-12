@@ -9,11 +9,20 @@
 /* Begin PBXBuildFile section */
 		B010DC081AB0031C0010FAEF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B010DC071AB0031C0010FAEF /* main.m */; };
 		B010DC0B1AB0031C0010FAEF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B010DC0A1AB0031C0010FAEF /* AppDelegate.m */; };
-		B010DC0E1AB0031C0010FAEF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B010DC0D1AB0031C0010FAEF /* ViewController.m */; };
+		B010DC0E1AB0031C0010FAEF /* vcMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = B010DC0D1AB0031C0010FAEF /* vcMenu.m */; };
 		B010DC111AB0031C0010FAEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B010DC0F1AB0031C0010FAEF /* Main.storyboard */; };
 		B010DC131AB0031C0010FAEF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B010DC121AB0031C0010FAEF /* Images.xcassets */; };
 		B010DC161AB0031C0010FAEF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B010DC141AB0031C0010FAEF /* LaunchScreen.xib */; };
 		B010DC221AB0031C0010FAEF /* SchoolAgendaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B010DC211AB0031C0010FAEF /* SchoolAgendaTests.m */; };
+		B010DC7C1AB0B0170010FAEF /* cellAgenda.m in Sources */ = {isa = PBXBuildFile; fileRef = B010DC7B1AB0B0170010FAEF /* cellAgenda.m */; };
+		B010DC831AB0B09C0010FAEF /* agenda.png in Resources */ = {isa = PBXBuildFile; fileRef = B010DC7E1AB0B09C0010FAEF /* agenda.png */; };
+		B010DC841AB0B09C0010FAEF /* calendario.png in Resources */ = {isa = PBXBuildFile; fileRef = B010DC7F1AB0B09C0010FAEF /* calendario.png */; };
+		B010DC871AB0B09C0010FAEF /* usuario.png in Resources */ = {isa = PBXBuildFile; fileRef = B010DC821AB0B09C0010FAEF /* usuario.png */; };
+		B010DC8A1AB0F0E90010FAEF /* eventos.png in Resources */ = {isa = PBXBuildFile; fileRef = B010DC881AB0F0E90010FAEF /* eventos.png */; };
+		B010DC8B1AB0F0E90010FAEF /* materia.png in Resources */ = {isa = PBXBuildFile; fileRef = B010DC891AB0F0E90010FAEF /* materia.png */; };
+		B010DC8D1AB0F1D80010FAEF /* horario.png in Resources */ = {isa = PBXBuildFile; fileRef = B010DC8C1AB0F1D80010FAEF /* horario.png */; };
+		B010DC8F1AB0FEF90010FAEF /* birrete.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B010DC8E1AB0FEF90010FAEF /* birrete.jpg */; };
+		B010DC911AB1023A0010FAEF /* libros.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B010DC901AB1023A0010FAEF /* libros.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +41,24 @@
 		B010DC071AB0031C0010FAEF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B010DC091AB0031C0010FAEF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B010DC0A1AB0031C0010FAEF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B010DC0C1AB0031C0010FAEF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B010DC0D1AB0031C0010FAEF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B010DC0C1AB0031C0010FAEF /* vcMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vcMenu.h; sourceTree = "<group>"; };
+		B010DC0D1AB0031C0010FAEF /* vcMenu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = vcMenu.m; sourceTree = "<group>"; };
 		B010DC101AB0031C0010FAEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B010DC121AB0031C0010FAEF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B010DC151AB0031C0010FAEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		B010DC1B1AB0031C0010FAEF /* SchoolAgendaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SchoolAgendaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B010DC201AB0031C0010FAEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B010DC211AB0031C0010FAEF /* SchoolAgendaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SchoolAgendaTests.m; sourceTree = "<group>"; };
+		B010DC7A1AB0B0170010FAEF /* cellAgenda.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cellAgenda.h; sourceTree = "<group>"; };
+		B010DC7B1AB0B0170010FAEF /* cellAgenda.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cellAgenda.m; sourceTree = "<group>"; };
+		B010DC7E1AB0B09C0010FAEF /* agenda.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = agenda.png; path = img/agenda.png; sourceTree = "<group>"; };
+		B010DC7F1AB0B09C0010FAEF /* calendario.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = calendario.png; path = img/calendario.png; sourceTree = "<group>"; };
+		B010DC821AB0B09C0010FAEF /* usuario.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = usuario.png; path = img/usuario.png; sourceTree = "<group>"; };
+		B010DC881AB0F0E90010FAEF /* eventos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = eventos.png; path = img/eventos.png; sourceTree = "<group>"; };
+		B010DC891AB0F0E90010FAEF /* materia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = materia.png; path = img/materia.png; sourceTree = "<group>"; };
+		B010DC8C1AB0F1D80010FAEF /* horario.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = horario.png; path = img/horario.png; sourceTree = "<group>"; };
+		B010DC8E1AB0FEF90010FAEF /* birrete.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = birrete.jpg; path = img/birrete.jpg; sourceTree = "<group>"; };
+		B010DC901AB1023A0010FAEF /* libros.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = libros.jpeg; path = img/libros.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +82,7 @@
 		B010DBF91AB0031C0010FAEF = {
 			isa = PBXGroup;
 			children = (
+				B010DC7D1AB0B07F0010FAEF /* img */,
 				B010DC041AB0031C0010FAEF /* SchoolAgenda */,
 				B010DC1E1AB0031C0010FAEF /* SchoolAgendaTests */,
 				B010DC031AB0031C0010FAEF /* Products */,
@@ -83,8 +103,10 @@
 			children = (
 				B010DC091AB0031C0010FAEF /* AppDelegate.h */,
 				B010DC0A1AB0031C0010FAEF /* AppDelegate.m */,
-				B010DC0C1AB0031C0010FAEF /* ViewController.h */,
-				B010DC0D1AB0031C0010FAEF /* ViewController.m */,
+				B010DC7A1AB0B0170010FAEF /* cellAgenda.h */,
+				B010DC7B1AB0B0170010FAEF /* cellAgenda.m */,
+				B010DC0C1AB0031C0010FAEF /* vcMenu.h */,
+				B010DC0D1AB0031C0010FAEF /* vcMenu.m */,
 				B010DC0F1AB0031C0010FAEF /* Main.storyboard */,
 				B010DC121AB0031C0010FAEF /* Images.xcassets */,
 				B010DC141AB0031C0010FAEF /* LaunchScreen.xib */,
@@ -117,6 +139,21 @@
 				B010DC201AB0031C0010FAEF /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B010DC7D1AB0B07F0010FAEF /* img */ = {
+			isa = PBXGroup;
+			children = (
+				B010DC901AB1023A0010FAEF /* libros.jpeg */,
+				B010DC8E1AB0FEF90010FAEF /* birrete.jpg */,
+				B010DC8C1AB0F1D80010FAEF /* horario.png */,
+				B010DC881AB0F0E90010FAEF /* eventos.png */,
+				B010DC891AB0F0E90010FAEF /* materia.png */,
+				B010DC7E1AB0B09C0010FAEF /* agenda.png */,
+				B010DC7F1AB0B09C0010FAEF /* calendario.png */,
+				B010DC821AB0B09C0010FAEF /* usuario.png */,
+			);
+			name = img;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,8 +236,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B010DC8D1AB0F1D80010FAEF /* horario.png in Resources */,
 				B010DC111AB0031C0010FAEF /* Main.storyboard in Resources */,
+				B010DC8B1AB0F0E90010FAEF /* materia.png in Resources */,
+				B010DC8A1AB0F0E90010FAEF /* eventos.png in Resources */,
+				B010DC831AB0B09C0010FAEF /* agenda.png in Resources */,
 				B010DC161AB0031C0010FAEF /* LaunchScreen.xib in Resources */,
+				B010DC841AB0B09C0010FAEF /* calendario.png in Resources */,
+				B010DC8F1AB0FEF90010FAEF /* birrete.jpg in Resources */,
+				B010DC871AB0B09C0010FAEF /* usuario.png in Resources */,
+				B010DC911AB1023A0010FAEF /* libros.jpeg in Resources */,
 				B010DC131AB0031C0010FAEF /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,9 +264,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B010DC0E1AB0031C0010FAEF /* ViewController.m in Sources */,
+				B010DC0E1AB0031C0010FAEF /* vcMenu.m in Sources */,
 				B010DC0B1AB0031C0010FAEF /* AppDelegate.m in Sources */,
 				B010DC081AB0031C0010FAEF /* main.m in Sources */,
+				B010DC7C1AB0B0170010FAEF /* cellAgenda.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +458,7 @@
 				B010DC271AB0031C0010FAEF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B010DC281AB0031C0010FAEF /* Build configuration list for PBXNativeTarget "SchoolAgendaTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +467,7 @@
 				B010DC2A1AB0031C0010FAEF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
