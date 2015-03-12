@@ -21,8 +21,9 @@
 		B010DC8A1AB0F0E90010FAEF /* eventos.png in Resources */ = {isa = PBXBuildFile; fileRef = B010DC881AB0F0E90010FAEF /* eventos.png */; };
 		B010DC8B1AB0F0E90010FAEF /* materia.png in Resources */ = {isa = PBXBuildFile; fileRef = B010DC891AB0F0E90010FAEF /* materia.png */; };
 		B010DC8D1AB0F1D80010FAEF /* horario.png in Resources */ = {isa = PBXBuildFile; fileRef = B010DC8C1AB0F1D80010FAEF /* horario.png */; };
-		B010DC8F1AB0FEF90010FAEF /* birrete.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B010DC8E1AB0FEF90010FAEF /* birrete.jpg */; };
 		B010DC911AB1023A0010FAEF /* libros.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B010DC901AB1023A0010FAEF /* libros.jpeg */; };
+		B010DC951AB15DE90010FAEF /* perfil.png in Resources */ = {isa = PBXBuildFile; fileRef = B010DC941AB15DE90010FAEF /* perfil.png */; };
+		B010DC971AB160220010FAEF /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = B010DC961AB160220010FAEF /* back.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,8 +58,9 @@
 		B010DC881AB0F0E90010FAEF /* eventos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = eventos.png; path = img/eventos.png; sourceTree = "<group>"; };
 		B010DC891AB0F0E90010FAEF /* materia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = materia.png; path = img/materia.png; sourceTree = "<group>"; };
 		B010DC8C1AB0F1D80010FAEF /* horario.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = horario.png; path = img/horario.png; sourceTree = "<group>"; };
-		B010DC8E1AB0FEF90010FAEF /* birrete.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = birrete.jpg; path = img/birrete.jpg; sourceTree = "<group>"; };
 		B010DC901AB1023A0010FAEF /* libros.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = libros.jpeg; path = img/libros.jpeg; sourceTree = "<group>"; };
+		B010DC941AB15DE90010FAEF /* perfil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = perfil.png; path = img/perfil.png; sourceTree = "<group>"; };
+		B010DC961AB160220010FAEF /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back.png; path = img/back.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,8 +146,9 @@
 		B010DC7D1AB0B07F0010FAEF /* img */ = {
 			isa = PBXGroup;
 			children = (
+				B010DC961AB160220010FAEF /* back.png */,
+				B010DC941AB15DE90010FAEF /* perfil.png */,
 				B010DC901AB1023A0010FAEF /* libros.jpeg */,
-				B010DC8E1AB0FEF90010FAEF /* birrete.jpg */,
 				B010DC8C1AB0F1D80010FAEF /* horario.png */,
 				B010DC881AB0F0E90010FAEF /* eventos.png */,
 				B010DC891AB0F0E90010FAEF /* materia.png */,
@@ -238,12 +241,13 @@
 			files = (
 				B010DC8D1AB0F1D80010FAEF /* horario.png in Resources */,
 				B010DC111AB0031C0010FAEF /* Main.storyboard in Resources */,
+				B010DC951AB15DE90010FAEF /* perfil.png in Resources */,
 				B010DC8B1AB0F0E90010FAEF /* materia.png in Resources */,
 				B010DC8A1AB0F0E90010FAEF /* eventos.png in Resources */,
 				B010DC831AB0B09C0010FAEF /* agenda.png in Resources */,
 				B010DC161AB0031C0010FAEF /* LaunchScreen.xib in Resources */,
 				B010DC841AB0B09C0010FAEF /* calendario.png in Resources */,
-				B010DC8F1AB0FEF90010FAEF /* birrete.jpg in Resources */,
+				B010DC971AB160220010FAEF /* back.png in Resources */,
 				B010DC871AB0B09C0010FAEF /* usuario.png in Resources */,
 				B010DC911AB1023A0010FAEF /* libros.jpeg in Resources */,
 				B010DC131AB0031C0010FAEF /* Images.xcassets in Resources */,
