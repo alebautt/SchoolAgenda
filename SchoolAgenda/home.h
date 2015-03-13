@@ -10,15 +10,13 @@
 #import <iAd/iAd.h>
 #import <Parse/Parse.h>
 
-@interface Inicio : UIViewController
-<UIAccelerometerDelegate, UITableViewDelegate>
+@interface home : UIViewController<ADBannerViewDelegate, UIApplicationDelegate>
 {
     ADBannerView *adView;
     BOOL bannerIsVisible;
 }
 
 @property (strong, nonatomic) IBOutlet UITableView *tblMain;
-
 
 @end
 

@@ -6,21 +6,22 @@
 //  Copyright (c) 2015 alebautista. All rights reserved.
 //
 
-#import "Inicio.h"
+#import "home.h"
 #import "cellAgenda.h"
 
-@interface Inicio ()
+@interface home ()
 
 @end
 
-@implementation Inicio
+@implementation home
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
+ /*   PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
     testObject[@"foo"] = @"bar";
-    [testObject saveInBackground];
+    [testObject saveInBackground];*/
+     [self cfgiAdBanner];
     
     }
 
@@ -88,7 +89,7 @@
     {
         cell.lblMenu.text = @"Usuario";
         cell.imgMenu.image = [UIImage imageNamed:@"usuario.png"];
-        // [self performSegueWithIdentifier:@"segueRegistro" sender:self];
+        [self performSegueWithIdentifier:@"segueRegistroUs" sender:self];
     }
     
     return cell;
@@ -101,6 +102,7 @@
 {
     // Setup iAdView
     adView = [[ADBannerView alloc] initWithFrame:CGRectZero];
+    
     //Tell the add view the origin depending on iPhone size
     CGRect adFrame      = adView.frame;
     adFrame.origin.y    = self.view.frame.size.height - 50;
@@ -113,7 +115,7 @@
     adView.delegate = self;
     adView.hidden = YES;
     self->bannerIsVisible = NO;
-    }
+}
 
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner
 {
