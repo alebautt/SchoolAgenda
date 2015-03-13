@@ -39,8 +39,9 @@
 		B020DC291AB184F000BB1982 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B020DC281AB184F000BB1982 /* libz.dylib */; };
 		B020DC2B1AB184F800BB1982 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B020DC2A1AB184F800BB1982 /* libsqlite3.dylib */; };
 		B05C5F251AB2A92B0052935C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B05C5F241AB2A92B0052935C /* Main.storyboard */; };
+		B0E126221AB2B6E300650870 /* addSubjects.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E126211AB2B6E300650870 /* addSubjects.m */; };
+		B0E126261AB2DDA600650870 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = B0E126251AB2DDA600650870 /* settings.png */; };
 		B0FAD74F1AB2300A0046F86F /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = B0FAD74D1AB2300A0046F86F /* camera.png */; };
-		B0FAD7501AB2300A0046F86F /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = B0FAD74E1AB2300A0046F86F /* settings.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,8 +95,10 @@
 		B020DC281AB184F000BB1982 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		B020DC2A1AB184F800BB1982 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		B05C5F241AB2A92B0052935C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B0E126201AB2B6E300650870 /* addSubjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addSubjects.h; sourceTree = "<group>"; };
+		B0E126211AB2B6E300650870 /* addSubjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addSubjects.m; sourceTree = "<group>"; };
+		B0E126251AB2DDA600650870 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings.png; path = img/settings.png; sourceTree = "<group>"; };
 		B0FAD74D1AB2300A0046F86F /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = camera.png; path = img/camera.png; sourceTree = "<group>"; };
-		B0FAD74E1AB2300A0046F86F /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings.png; path = img/settings.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +162,8 @@
 				B010DC0A1AB0031C0010FAEF /* AppDelegate.m */,
 				B010DC7A1AB0B0170010FAEF /* cellAgenda.h */,
 				B010DC7B1AB0B0170010FAEF /* cellAgenda.m */,
+				B0E126201AB2B6E300650870 /* addSubjects.h */,
+				B0E126211AB2B6E300650870 /* addSubjects.m */,
 				B020DC071AB1806400BB1982 /* addUser.h */,
 				B020DC081AB1806400BB1982 /* addUser.m */,
 				B010DC0C1AB0031C0010FAEF /* home.h */,
@@ -200,8 +205,8 @@
 		B010DC7D1AB0B07F0010FAEF /* img */ = {
 			isa = PBXGroup;
 			children = (
+				B0E126251AB2DDA600650870 /* settings.png */,
 				B0FAD74D1AB2300A0046F86F /* camera.png */,
-				B0FAD74E1AB2300A0046F86F /* settings.png */,
 				B010DC941AB15DE90010FAEF /* perfil.png */,
 				B010DC8C1AB0F1D80010FAEF /* horario.png */,
 				B010DC881AB0F0E90010FAEF /* eventos.png */,
@@ -324,6 +329,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0E126261AB2DDA600650870 /* settings.png in Resources */,
 				B010DC8D1AB0F1D80010FAEF /* horario.png in Resources */,
 				B010DC951AB15DE90010FAEF /* perfil.png in Resources */,
 				B010DC8B1AB0F0E90010FAEF /* materia.png in Resources */,
@@ -332,7 +338,6 @@
 				B0FAD74F1AB2300A0046F86F /* camera.png in Resources */,
 				B010DC161AB0031C0010FAEF /* LaunchScreen.xib in Resources */,
 				B05C5F251AB2A92B0052935C /* Main.storyboard in Resources */,
-				B0FAD7501AB2300A0046F86F /* settings.png in Resources */,
 				B010DC841AB0B09C0010FAEF /* calendario.png in Resources */,
 				B010DC871AB0B09C0010FAEF /* usuario.png in Resources */,
 				B010DC131AB0031C0010FAEF /* Images.xcassets in Resources */,
@@ -357,6 +362,7 @@
 				B010DC0B1AB0031C0010FAEF /* AppDelegate.m in Sources */,
 				B010DC081AB0031C0010FAEF /* main.m in Sources */,
 				B020DC091AB1806400BB1982 /* addUser.m in Sources */,
+				B0E126221AB2B6E300650870 /* addSubjects.m in Sources */,
 				B010DC7C1AB0B0170010FAEF /* cellAgenda.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

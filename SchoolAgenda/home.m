@@ -43,7 +43,7 @@
 //-------------------------------------------------------------------------------
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return 3;
 }
 //-------------------------------------------------------------------------------
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -63,35 +63,26 @@
         [tableView registerNib:[UINib nibWithNibName:@"cellAgenda" bundle:nil] forCellReuseIdentifier:@"cellAgenda"];
         cell = [tableView dequeueReusableCellWithIdentifier:@"cellAgenda"];
     }
-    
+
     if (indexPath.row == 0)
-    {
-        cell.lblMenu.text = @"Calendario";
-        cell.imgMenu.image = [UIImage imageNamed:@"calendario.png"];
-    }
-    else if (indexPath.row == 1)
     {
         cell.lblMenu.text = @"Materias";
         cell.imgMenu.image = [UIImage imageNamed:@"materia.png"];
     }
-    else if (indexPath.row == 2)
+    else if (indexPath.row == 1)
     {
         cell.lblMenu.text = @"Horario";
         cell.imgMenu.image = [UIImage imageNamed:@"horario.png"];
     }
     
-    else if (indexPath.row == 3)
+    else if (indexPath.row == 2)
     {
         cell.lblMenu.text = @"Eventos";
         cell.imgMenu.image = [UIImage imageNamed:@"eventos.png"];
     }
-    else if (indexPath.row == 4)
-    {
-        cell.lblMenu.text = @"Usuario";
-        cell.imgMenu.image = [UIImage imageNamed:@"usuario.png"];
-        [self performSegueWithIdentifier:@"segueRegistroUs" sender:self];
-    }
-    
+ 
+    //  [self performSegueWithIdentifier:@"segueRegistroUs" sender:self];
+    //
     return cell;
 }
 

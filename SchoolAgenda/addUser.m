@@ -37,14 +37,36 @@ UIAlertView *alert;
 }
 */
 
+/*
+
+- (void)myMethod {
+    PFUser *user = [PFUser user];
+    user.username = @"my name";
+    user.password = @"my pass";
+    user.email = @"email@example.com";
+    
+    // other fields can be set just like with PFObject
+    
+    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (!error) {
+            // Hooray! Let them use the app now.
+        } else {
+            NSString *errorString = [error userInfo][@"error"];
+            // Show the errorString somewhere and let the user try again.
+        }
+    }];
+}*/
+
+
+
 - (IBAction)btnSave:(id)sender {
        if([self.txtName.text isEqualToString:@""] ||[self.txtEmail.text isEqualToString:@""] || [self.txtPassword.text isEqualToString:@""]){
         NSLog(@"no se puede guardar");
     }
         else{
-            PFObject *object = [PFObject objectWithClassName:@"Usuarios"];
+            PFObject *object = [PFObject objectWithClassName:@"User"];
             
-            object[@"name"] = self.txtName.text;
+            object[@"username"] = self.txtName.text;
             object[@"email"] = self.txtEmail.text;
             object[@"password"] = self.txtPassword.text;
             object[@"school"] = self.txtSchool.text;
