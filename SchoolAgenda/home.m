@@ -9,6 +9,8 @@
 #import "home.h"
 #import "cellAgenda.h"
 
+NSMutableArray *arrayUser;
+
 @interface home ()
 
 @end
@@ -22,16 +24,12 @@
     testObject[@"foo"] = @"bar";
     [testObject saveInBackground];*/
      [self cfgiAdBanner];
-    
     }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
-
 
 /**********************************************************************************************
  Table Functions
@@ -54,7 +52,6 @@
 //-------------------------------------------------------------------------------
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"cellAgenda");
     static NSString *CellIdentifier = @"cellAgenda";
     
     cellAgenda *cell = (cellAgenda *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -74,16 +71,27 @@
         cell.lblMenu.text = @"Horario";
         cell.imgMenu.image = [UIImage imageNamed:@"horario.png"];
     }
-    
     else if (indexPath.row == 2)
     {
         cell.lblMenu.text = @"Eventos";
         cell.imgMenu.image = [UIImage imageNamed:@"eventos.png"];
     }
- 
-    //  [self performSegueWithIdentifier:@"segueRegistroUs" sender:self];
-    //
-    return cell;
+   return cell;
+}
+
+-(void) tableView:(UITableView *) tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"Cell seleccionado");
+    if (indexPath.row == 0){
+     [self performSegueWithIdentifier:@"segueHomeToSubjects" sender:self];
+    }
+    else if (indexPath.row == 1){
+       // [self performSegueWithIdentifier:@"segueToHomeFromSubjects" sender:self];
+    }
+    else if (indexPath.row == 2){
+       // [self performSegueWithIdentifier:@"segueToHomeFromSubjects" sender:self];
+    }
+
 }
 
 /**********************************************************************************************

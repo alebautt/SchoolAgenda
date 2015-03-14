@@ -18,5 +18,8 @@
 
 @property (strong, nonatomic) IBOutlet UITableView *tblMain;
 
+@property (strong, nonatomic) IBOutlet UIImageView *imgBckg;
+@property (strong, nonatomic) IBOutlet UILabel *lblUser;
+@property (strong, nonatomic) IBOutlet UILabel *lblSchool;
 @end
 

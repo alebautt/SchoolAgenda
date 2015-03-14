@@ -41,6 +41,7 @@
 		B05C5F251AB2A92B0052935C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B05C5F241AB2A92B0052935C /* Main.storyboard */; };
 		B0E126221AB2B6E300650870 /* addSubjects.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E126211AB2B6E300650870 /* addSubjects.m */; };
 		B0E126261AB2DDA600650870 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = B0E126251AB2DDA600650870 /* settings.png */; };
+		B0E126291AB3E23A00650870 /* ListSubjects.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E126281AB3E23A00650870 /* ListSubjects.m */; };
 		B0FAD74F1AB2300A0046F86F /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = B0FAD74D1AB2300A0046F86F /* camera.png */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +99,8 @@
 		B0E126201AB2B6E300650870 /* addSubjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addSubjects.h; sourceTree = "<group>"; };
 		B0E126211AB2B6E300650870 /* addSubjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addSubjects.m; sourceTree = "<group>"; };
 		B0E126251AB2DDA600650870 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings.png; path = img/settings.png; sourceTree = "<group>"; };
+		B0E126271AB3E23A00650870 /* ListSubjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListSubjects.h; sourceTree = "<group>"; };
+		B0E126281AB3E23A00650870 /* ListSubjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListSubjects.m; sourceTree = "<group>"; };
 		B0FAD74D1AB2300A0046F86F /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = camera.png; path = img/camera.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -168,6 +171,8 @@
 				B020DC081AB1806400BB1982 /* addUser.m */,
 				B010DC0C1AB0031C0010FAEF /* home.h */,
 				B010DC0D1AB0031C0010FAEF /* home.m */,
+				B0E126271AB3E23A00650870 /* ListSubjects.h */,
+				B0E126281AB3E23A00650870 /* ListSubjects.m */,
 				B05C5F241AB2A92B0052935C /* Main.storyboard */,
 				B010DC121AB0031C0010FAEF /* Images.xcassets */,
 				B010DC141AB0031C0010FAEF /* LaunchScreen.xib */,
@@ -361,6 +366,7 @@
 				B010DC0E1AB0031C0010FAEF /* home.m in Sources */,
 				B010DC0B1AB0031C0010FAEF /* AppDelegate.m in Sources */,
 				B010DC081AB0031C0010FAEF /* main.m in Sources */,
+				B0E126291AB3E23A00650870 /* ListSubjects.m in Sources */,
 				B020DC091AB1806400BB1982 /* addUser.m in Sources */,
 				B0E126221AB2B6E300650870 /* addSubjects.m in Sources */,
 				B010DC7C1AB0B0170010FAEF /* cellAgenda.m in Sources */,

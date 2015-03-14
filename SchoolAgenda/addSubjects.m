@@ -47,7 +47,7 @@ UIAlertView *alert;
         PFObject *object = [PFObject objectWithClassName:@"Subjects"];
         object[@"subject"] = self.txtSubjects.text;
         object[@"teacher"] = self.txtNameTeach.text;
-        object[@"idSubj"] = [PFObject objectWithoutDataWithClassName:@"User" objectId:@"sFzdoBLOrc"];
+       // object[@"idSubj"] = [PFObject objectWithoutDataWithClassName:@"User" objectId:@"sFzdoBLOrc"];
 
    
         
@@ -70,5 +70,7 @@ UIAlertView *alert;
 }
 
 - (IBAction)btnCancel:(id)sender {
+    [self performSegueWithIdentifier:@"segueAddSubToListSub" sender:self];
+
 }
 @end
