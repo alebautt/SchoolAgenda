@@ -20,17 +20,29 @@ NSMutableArray *arrayUser;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
- /*   PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
-    testObject[@"foo"] = @"bar";
-    [testObject saveInBackground];*/
-     [self cfgiAdBanner];
+    [self cfgiAdBanner];
+    [self datosPerfil];
     }
 
 - (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
+    //[super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+-(void) datosPerfil{
+    PFQuery *query = [PFQuery queryWithClassName:@"User"];
+    [query getObjectInBackgroundWithId:@"kY1gcB7aVI" block:^(PFObject *user, NSError *error) {
+        // Do something with the returned PFObject in the gameScore variable.
+        self.lblUser.text = user[@"username"];
+        self.lblSchool.text = user[@"school"];
+        PFFile *thePhoto = [user objectForKey:@"photo"];
+        [thePhoto getDataInBackgroundWithBlock:^(NSData *data, NSError *error)
+         {
+            NSData *imageFile = [thePhoto getData];
+            self.imgBckg.image = [UIImage imageWithData:imageFile];
+         }];
+    }];
+}
 /**********************************************************************************************
  Table Functions
  **********************************************************************************************/
@@ -46,7 +58,7 @@ NSMutableArray *arrayUser;
 //-------------------------------------------------------------------------------
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 65;
+    return 63;
 }
 
 //-------------------------------------------------------------------------------
@@ -83,11 +95,10 @@ NSMutableArray *arrayUser;
 {
     NSLog(@"Cell seleccionado");
     if (indexPath.row == 0){
-     [self performSegueWithIdentifier:@"segueHomeToSubjects" sender:self];
-    }
+     [self performSegueWithIdentifier:@"segueHomeToSubjects" sender:self];}
     else if (indexPath.row == 1){
        // [self performSegueWithIdentifier:@"segueToHomeFromSubjects" sender:self];
-    }
+}
     else if (indexPath.row == 2){
        // [self performSegueWithIdentifier:@"segueToHomeFromSubjects" sender:self];
     }
@@ -105,7 +116,7 @@ NSMutableArray *arrayUser;
     //Tell the add view the origin depending on iPhone size
     CGRect adFrame      = adView.frame;
     adFrame.origin.y    = self.view.frame.size.height - 50;
-    NSLog(@"adFrame.origin.y: %f",adFrame.origin.y);
+   // NSLog(@"adFrame.origin.y: %f",adFrame.origin.y);
     adView.frame        = adFrame;
     
     [adView setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
@@ -160,6 +171,4 @@ NSMutableArray *arrayUser;
     // [audio resume];
 }
 //___________________________________________
-
-
 @end

@@ -12,18 +12,19 @@
 
 - (void)awakeFromNib {
     // Initialization code
-    
-
      self.vCell.layer.borderColor =[UIColor clearColor].CGColor;
     self.vCell.layer.borderWidth =1;
     self.vCell.clipsToBounds = YES;
-    self.vCell.layer.cornerRadius =8;
+    self.vCell.layer.cornerRadius =9;
     
+    self.cellSubj.layer.borderColor =[UIColor clearColor].CGColor;
+    self.cellSubj.layer.borderWidth =1;
+    self.cellSubj.clipsToBounds = YES;
+    self.cellSubj.layer.cornerRadius =9;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
     // Configure the view for the selected state
 }
 

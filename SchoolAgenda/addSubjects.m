@@ -48,12 +48,8 @@ UIAlertView *alert;
         object[@"subject"] = self.txtSubjects.text;
         object[@"teacher"] = self.txtNameTeach.text;
        // object[@"idSubj"] = [PFObject objectWithoutDataWithClassName:@"User" objectId:@"sFzdoBLOrc"];
-
-   
         
-        
-        //
-        
+      [object pinInBackground];
         [object saveInBackground];
         self.txtSubjects.text = nil;
         self.txtNameTeach.text = nil;

@@ -15,6 +15,7 @@ UIImage *choseImg;
 @end
 
 UIAlertView *alert;
+NSString *alerta;
 @implementation addUser
 
 - (void)viewDidLoad {
@@ -39,31 +40,10 @@ UIAlertView *alert;
 }
 */
 
-/*
-
-- (void)myMethod {
-    PFUser *user = [PFUser user];
-    user.username = @"my name";
-    user.password = @"my pass";
-    user.email = @"email@example.com";
-    
-    // other fields can be set just like with PFObject
-    
-    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (!error) {
-            // Hooray! Let them use the app now.
-        } else {
-            NSString *errorString = [error userInfo][@"error"];
-            // Show the errorString somewhere and let the user try again.
-        }
-    }];
-}*/
-
-
-
 - (IBAction)btnSave:(id)sender {
        if([self.txtName.text isEqualToString:@""] ||[self.txtEmail.text isEqualToString:@""] || [self.txtPassword.text isEqualToString:@""]){
-        NSLog(@"no se puede guardar");
+           alerta=@"No se ha podido guardar";
+           [self AlertRegistro];
     }
         else{
             PFObject *object = [PFObject objectWithClassName:@"User"];
@@ -77,8 +57,12 @@ UIAlertView *alert;
             PFFile *imageFile = [PFFile fileWithName:@"photo.png" data:imageData];
         
             object[@"photo"]=imageFile;
-            
+            [object pinInBackground];
             [object saveInBackground];
+            
+            alerta=@"Guardado correctamente";
+            [self AlertRegistro];
+            
             self.txtName.text = nil;
             self.txtEmail.text = nil;
             self.txtPassword.text = nil;
@@ -96,14 +80,22 @@ UIAlertView *alert;
 }
 
 -(void) AlertCamera{
-    alert = [[UIAlertView alloc] initWithTitle:@"Foto de perfil"
-                                       message:@"Seleccionar de"
+    alert = [[UIAlertView alloc] initWithTitle:@"Agenda Escolar"
+                                       message:@"Seleccionar foto"
                                       delegate:self
                              cancelButtonTitle:@"Cancelar"
                              otherButtonTitles:@"Camara",@"Carrete",nil];
     [alert show];
 }
 
+-(void) AlertRegistro{
+    alert = [[UIAlertView alloc] initWithTitle:@"Agenda Escolar"
+                                       message:alerta
+                                      delegate:self
+                             cancelButtonTitle:@"Aceptar"
+                             otherButtonTitles:nil];
+    [alert show];
+}
 - (void)alertView:(UIAlertView *)alertView
 clickedButtonAtIndex:(NSInteger)buttonIndex
 {

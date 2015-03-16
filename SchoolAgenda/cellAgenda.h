@@ -18,5 +18,6 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *lblSubjects;
 
+@property (strong, nonatomic) IBOutlet UIView *cellSubj;
 
 @end

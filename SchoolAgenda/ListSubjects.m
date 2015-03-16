@@ -16,11 +16,13 @@
 
 @implementation ListSubjects
 @synthesize tableView;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self performSelector:@selector(retrieveFromParse)];
-
+//[query unpinInBackground];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,45 +54,22 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return arraySubjects.count;
+   // NSLog(@"%lu",(unsigned long)arraySubjects.count);
 
 }
 //-------------------------------------------------------------------------------
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 44;
+    return 55;
 }
 
 //-------------------------------------------------------------------------------
 
-
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object {
-    
-    
-    
- /*
-    static NSString *CellIdentifier = @"CellResults";
-    CellResults *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    PFObject *tempObject = [arrayLugares objectAtIndex:indexPath.row];
-    cell.lblName.text = [tempObject objectForKey:@"name"];
-    return cell;
-    
-    
-    */
-    
-    
-    
-    
-    
-    
-    static NSString *CellIdentifier = @"cellSubjects";
-    
-    cellAgenda *cell = (cellAgenda *)[self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    if (cell == nil) {
-        cell = [[cellAgenda alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }
-    cell.lblSubjects.text = [object objectForKey:@"subject"];
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *CellIdentifier = @"cellAgenda";
+    cellAgenda *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    PFObject *tempObject = [arraySubjects objectAtIndex:indexPath.row];
+    cell.lblSubjects.text = [tempObject objectForKey:@"subject"];
     return cell;
 }
 
@@ -100,8 +79,11 @@
     NSLog(@"Cell seleccionado");
 }
 
+
 -(void) retrieveFromParse{
     PFQuery *query =[PFQuery queryWithClassName:@"Subjects"];
+    //[query unpinInBackground];
+    
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error)
         {
@@ -109,6 +91,9 @@
         }
         [tableView reloadData];
     }];
+ //   [query unpinInBackground];
+    
+    
 }
 
 

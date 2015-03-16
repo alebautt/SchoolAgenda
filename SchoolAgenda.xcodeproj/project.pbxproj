@@ -14,7 +14,6 @@
 		B010DC161AB0031C0010FAEF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B010DC141AB0031C0010FAEF /* LaunchScreen.xib */; };
 		B010DC221AB0031C0010FAEF /* SchoolAgendaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B010DC211AB0031C0010FAEF /* SchoolAgendaTests.m */; };
 		B010DC7C1AB0B0170010FAEF /* cellAgenda.m in Sources */ = {isa = PBXBuildFile; fileRef = B010DC7B1AB0B0170010FAEF /* cellAgenda.m */; };
-		B010DC831AB0B09C0010FAEF /* agenda.png in Resources */ = {isa = PBXBuildFile; fileRef = B010DC7E1AB0B09C0010FAEF /* agenda.png */; };
 		B010DC841AB0B09C0010FAEF /* calendario.png in Resources */ = {isa = PBXBuildFile; fileRef = B010DC7F1AB0B09C0010FAEF /* calendario.png */; };
 		B010DC871AB0B09C0010FAEF /* usuario.png in Resources */ = {isa = PBXBuildFile; fileRef = B010DC821AB0B09C0010FAEF /* usuario.png */; };
 		B010DC8A1AB0F0E90010FAEF /* eventos.png in Resources */ = {isa = PBXBuildFile; fileRef = B010DC881AB0F0E90010FAEF /* eventos.png */; };
@@ -39,6 +38,8 @@
 		B020DC291AB184F000BB1982 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B020DC281AB184F000BB1982 /* libz.dylib */; };
 		B020DC2B1AB184F800BB1982 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B020DC2A1AB184F800BB1982 /* libsqlite3.dylib */; };
 		B05C5F251AB2A92B0052935C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B05C5F241AB2A92B0052935C /* Main.storyboard */; };
+		B05E6F3A1AB54AEB00812B09 /* students.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B05E6F391AB54AEB00812B09 /* students.jpeg */; };
+		B05E6F421AB62D8200812B09 /* list.png in Resources */ = {isa = PBXBuildFile; fileRef = B05E6F411AB62D8200812B09 /* list.png */; };
 		B0E126221AB2B6E300650870 /* addSubjects.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E126211AB2B6E300650870 /* addSubjects.m */; };
 		B0E126261AB2DDA600650870 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = B0E126251AB2DDA600650870 /* settings.png */; };
 		B0E126291AB3E23A00650870 /* ListSubjects.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E126281AB3E23A00650870 /* ListSubjects.m */; };
@@ -70,7 +71,6 @@
 		B010DC211AB0031C0010FAEF /* SchoolAgendaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SchoolAgendaTests.m; sourceTree = "<group>"; };
 		B010DC7A1AB0B0170010FAEF /* cellAgenda.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cellAgenda.h; sourceTree = "<group>"; };
 		B010DC7B1AB0B0170010FAEF /* cellAgenda.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cellAgenda.m; sourceTree = "<group>"; };
-		B010DC7E1AB0B09C0010FAEF /* agenda.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = agenda.png; path = img/agenda.png; sourceTree = "<group>"; };
 		B010DC7F1AB0B09C0010FAEF /* calendario.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = calendario.png; path = img/calendario.png; sourceTree = "<group>"; };
 		B010DC821AB0B09C0010FAEF /* usuario.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = usuario.png; path = img/usuario.png; sourceTree = "<group>"; };
 		B010DC881AB0F0E90010FAEF /* eventos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = eventos.png; path = img/eventos.png; sourceTree = "<group>"; };
@@ -96,6 +96,8 @@
 		B020DC281AB184F000BB1982 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		B020DC2A1AB184F800BB1982 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		B05C5F241AB2A92B0052935C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B05E6F391AB54AEB00812B09 /* students.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = students.jpeg; path = img/students.jpeg; sourceTree = "<group>"; };
+		B05E6F411AB62D8200812B09 /* list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = list.png; path = img/list.png; sourceTree = "<group>"; };
 		B0E126201AB2B6E300650870 /* addSubjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addSubjects.h; sourceTree = "<group>"; };
 		B0E126211AB2B6E300650870 /* addSubjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addSubjects.m; sourceTree = "<group>"; };
 		B0E126251AB2DDA600650870 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings.png; path = img/settings.png; sourceTree = "<group>"; };
@@ -210,13 +212,14 @@
 		B010DC7D1AB0B07F0010FAEF /* img */ = {
 			isa = PBXGroup;
 			children = (
+				B05E6F411AB62D8200812B09 /* list.png */,
+				B05E6F391AB54AEB00812B09 /* students.jpeg */,
 				B0E126251AB2DDA600650870 /* settings.png */,
 				B0FAD74D1AB2300A0046F86F /* camera.png */,
 				B010DC941AB15DE90010FAEF /* perfil.png */,
 				B010DC8C1AB0F1D80010FAEF /* horario.png */,
 				B010DC881AB0F0E90010FAEF /* eventos.png */,
 				B010DC891AB0F0E90010FAEF /* materia.png */,
-				B010DC7E1AB0B09C0010FAEF /* agenda.png */,
 				B010DC7F1AB0B09C0010FAEF /* calendario.png */,
 				B010DC821AB0B09C0010FAEF /* usuario.png */,
 			);
@@ -338,13 +341,14 @@
 				B010DC8D1AB0F1D80010FAEF /* horario.png in Resources */,
 				B010DC951AB15DE90010FAEF /* perfil.png in Resources */,
 				B010DC8B1AB0F0E90010FAEF /* materia.png in Resources */,
+				B05E6F421AB62D8200812B09 /* list.png in Resources */,
 				B010DC8A1AB0F0E90010FAEF /* eventos.png in Resources */,
-				B010DC831AB0B09C0010FAEF /* agenda.png in Resources */,
 				B0FAD74F1AB2300A0046F86F /* camera.png in Resources */,
 				B010DC161AB0031C0010FAEF /* LaunchScreen.xib in Resources */,
 				B05C5F251AB2A92B0052935C /* Main.storyboard in Resources */,
 				B010DC841AB0B09C0010FAEF /* calendario.png in Resources */,
 				B010DC871AB0B09C0010FAEF /* usuario.png in Resources */,
+				B05E6F3A1AB54AEB00812B09 /* students.jpeg in Resources */,
 				B010DC131AB0031C0010FAEF /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
