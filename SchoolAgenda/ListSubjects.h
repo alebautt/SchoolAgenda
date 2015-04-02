@@ -14,5 +14,6 @@
   NSArray *arraySubjects;
 }
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UILabel *lblMsg;
 
 @end

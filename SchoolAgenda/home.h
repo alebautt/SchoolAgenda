@@ -10,7 +10,7 @@
 #import <iAd/iAd.h>
 #import <Parse/Parse.h>
 
-@interface home : UIViewController<UIAccelerometerDelegate, UITableViewDelegate, ADBannerViewDelegate>
+@interface Home : UIViewController<UIAccelerometerDelegate, UITableViewDelegate, ADBannerViewDelegate>
 {
     ADBannerView *adView;
     BOOL bannerIsVisible;

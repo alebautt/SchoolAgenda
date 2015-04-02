@@ -6,16 +6,16 @@
 //  Copyright (c) 2015 alebautista. All rights reserved.
 //
 
-#import "home.h"
+#import "Home.h"
 #import "cellAgenda.h"
 
 NSMutableArray *arrayUser;
 
-@interface home ()
+@interface Home ()
 
 @end
 
-@implementation home
+@implementation Home
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -31,7 +31,9 @@ NSMutableArray *arrayUser;
 
 -(void) datosPerfil{
     PFQuery *query = [PFQuery queryWithClassName:@"User"];
-    [query getObjectInBackgroundWithId:@"kY1gcB7aVI" block:^(PFObject *user, NSError *error) {
+   [query fromLocalDatastore];
+    
+    [query getObjectInBackgroundWithId:@"d0gnqrq6ay" block:^(PFObject *user, NSError *error) {
         // Do something with the returned PFObject in the gameScore variable.
         self.lblUser.text = user[@"username"];
         self.lblSchool.text = user[@"school"];
@@ -53,7 +55,7 @@ NSMutableArray *arrayUser;
 //-------------------------------------------------------------------------------
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    return 4;
 }
 //-------------------------------------------------------------------------------
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -88,6 +90,11 @@ NSMutableArray *arrayUser;
         cell.lblMenu.text = @"Eventos";
         cell.imgMenu.image = [UIImage imageNamed:@"eventos.png"];
     }
+    else if (indexPath.row == 3)
+    {
+        cell.lblMenu.text = @"Calificaciones";
+        cell.imgMenu.image = [UIImage imageNamed:@"calif.png"];
+    }
    return cell;
 }
 
@@ -97,10 +104,13 @@ NSMutableArray *arrayUser;
     if (indexPath.row == 0){
      [self performSegueWithIdentifier:@"segueHomeToSubjects" sender:self];}
     else if (indexPath.row == 1){
-       // [self performSegueWithIdentifier:@"segueToHomeFromSubjects" sender:self];
+        [self performSegueWithIdentifier:@"segueHomeToHorario" sender:self];
 }
     else if (indexPath.row == 2){
-       // [self performSegueWithIdentifier:@"segueToHomeFromSubjects" sender:self];
+       [self performSegueWithIdentifier:@"segueHomeToListEvent" sender:self];
+    }
+    else if (indexPath.row == 3){
+        [self performSegueWithIdentifier:@"segueHomeToRatings" sender:self];
     }
 
 }

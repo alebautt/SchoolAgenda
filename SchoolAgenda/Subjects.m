@@ -6,14 +6,14 @@
 //  Copyright (c) 2015 alebautista. All rights reserved.
 //
 
-#import "addSubjects.h"
+#import "Subjects.h"
 
 UIAlertView *alert;
-@interface addSubjects ()
-
+NSString *alerta;
+@interface Subjects ()
 @end
 
-@implementation addSubjects
+@implementation Subjects
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -37,36 +37,29 @@ UIAlertView *alert;
 
 - (IBAction)btnSave:(id)sender {
     if([self.txtSubjects.text isEqualToString:@""]){
+      alerta=@"Verifica que hayas ingresado una materia";
         [self alertaRegistro];
     }
     else{
-        
-        // Add a relation between the Post with objectId "1zEcyElZ80" and the comment
-     //   myComment[@"Subjects"] = [PFObject objectWithoutDataWithClassName:@"idSubj" objectId:@"ar8iSJ3FxF"];
-        
         PFObject *object = [PFObject objectWithClassName:@"Subjects"];
         object[@"subject"] = self.txtSubjects.text;
         object[@"teacher"] = self.txtNameTeach.text;
-       // object[@"idSubj"] = [PFObject objectWithoutDataWithClassName:@"User" objectId:@"sFzdoBLOrc"];
-        
-      [object pinInBackground];
+  
+        [object pinInBackground];
         [object saveInBackground];
+        alerta=@"Guardado correctamente";
+        [self alertaRegistro];
         self.txtSubjects.text = nil;
         self.txtNameTeach.text = nil;
      }
 }
 
 -(void) alertaRegistro{
-    alert = [[UIAlertView alloc] initWithTitle:@"Alerta"
-                                       message: @"Ingresa una materia"
+    alert = [[UIAlertView alloc] initWithTitle:@"Agenda Escolar"
+                                       message: alerta
                                       delegate:self
                              cancelButtonTitle:@"Ok"
                              otherButtonTitles:nil];
     [alert show];
-}
-
-- (IBAction)btnCancel:(id)sender {
-    [self performSegueWithIdentifier:@"segueAddSubToListSub" sender:self];
-
 }
 @end

@@ -11,7 +11,6 @@
 UIImage *choseImg;
 
 @interface addUser ()
-
 @end
 
 UIAlertView *alert;
@@ -22,8 +21,6 @@ NSString *alerta;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -42,7 +39,7 @@ NSString *alerta;
 
 - (IBAction)btnSave:(id)sender {
        if([self.txtName.text isEqualToString:@""] ||[self.txtEmail.text isEqualToString:@""] || [self.txtPassword.text isEqualToString:@""]){
-           alerta=@"No se ha podido guardar";
+           alerta=@"Es necesario ingresar los campos";
            [self AlertRegistro];
     }
         else{
@@ -68,7 +65,7 @@ NSString *alerta;
             self.txtPassword.text = nil;
             self.txtSchool.text = nil;
             self.imgPhoto = nil;
-            [self performSegueWithIdentifier:@"segueToUsFromHome" sender:self];
+            [self performSegueWithIdentifier:@"segueUserToHome" sender:self];
         }
 }
 

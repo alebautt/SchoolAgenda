@@ -10,7 +10,7 @@
 #import <Parse/Parse.h>
 
 
-@interface addSubjects : UIViewController
+@interface Subjects : UIViewController
 
 //text
 @property (strong, nonatomic) IBOutlet UITextField *txtSubjects;
@@ -18,6 +18,6 @@
 
 //buttons
 - (IBAction)btnSave:(id)sender;
-- (IBAction)btnCancel:(id)sender;
+
 
 @end

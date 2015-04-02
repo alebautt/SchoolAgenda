@@ -16,8 +16,9 @@
 
 //ListSubjects
 
-@property (strong, nonatomic) IBOutlet UILabel *lblSubjects;
 
 @property (strong, nonatomic) IBOutlet UIView *cellSubj;
+
+@property (strong, nonatomic) IBOutlet UILabel *lblSubject;
 
 @end
