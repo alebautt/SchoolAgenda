@@ -19,7 +19,7 @@
 @implementation ListSubjects
 @synthesize tableView;
 NSString *seleccionado;
-NSString *objectId;
+
 UIAlertView *alert;
 
 - (void)viewDidLoad {
@@ -69,13 +69,10 @@ UIAlertView *alert;
 -(void) tableView:(UITableView *) tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self AlertClic];
-   // NSString *idSub;
     PFObject *tempObject = [arraySubjects objectAtIndex:indexPath.row ];
     objectId = tempObject.objectId;
     NSLog(@"esto es id: %@",objectId);
 }
-
-
 
 //-------------------------------------------------------------------------------
 
@@ -92,22 +89,14 @@ UIAlertView *alert;
 clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if(buttonIndex==1){//Editar
+        [self EditParse];
         flagSub = 1;
-        [self performSegueWithIdentifier:@"segueListSubToAddSubj" sender:self];
-        PFQuery *query = [PFQuery queryWithClassName:@"Subjects"];
-        [query getObjectInBackgroundWithId:arraySubjects  block:^(PFObject *gameScore, NSError *error) {
-            // Do something with the returned PFObject in the gameScore variable.
-            NSLog(@"%@", gameScore);
-        }];
-    }
+         [self performSegueWithIdentifier:@"segueListSubToAddSubj" sender:self];
+     }
     else if(buttonIndex==2){//eliminar
- //       UITableViewCell *cell = (UITableViewCell*);
-       // NSIndexPath *indexPath = [tableView indexPathForCell:cell];
-        
-  
+        [self DeleteParse];
     }
-}
-
+    }
 
 -(void) retrieveFromParse{
     PFQuery *query =[PFQuery queryWithClassName:@"Subjects"];
@@ -120,8 +109,25 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
     }];
 }
 
+-(void) EditParse{
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    PFObject *object = [arraySubjects objectAtIndex:indexPath.row ];
+    SubjName = [object objectForKey:@"subject"];
+    SubjTeacher = [object objectForKey:@"teacher"];
+}
+
+-(void) DeleteParse{
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    PFObject *object = [arraySubjects objectAtIndex:indexPath.row ];
+    [object deleteInBackground];
+    [object saveInBackground];
+   [self viewDidLoad];
+}
+
 - (IBAction)nbtnAdd:(id)sender {
     flagSub = 0;
-    
+  //  SubjName=@"";
+    NSLog(@"Entrando a add");
 }
+
 @end

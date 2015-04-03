@@ -20,34 +20,29 @@ NSString *alerta;
 @synthesize txtSubjects;
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+     [super viewDidLoad];
     // Do any additional setup after loading the view.
     if(flagSub == 0)//agregar materia
     {
-        NSLog(@"agregar materia");
         self.lblSave.text=@"Guardar";
+        NSLog(@"Guardar");
+     //   objectId = @"";
+        
     }
-    else if(flagSub == 1)
+   else if(flagSub == 1)//editar
     {
-        NSLog(@"modifica materia");
+        self.txtSubjects.text=SubjName;
+        self.txtNameTeach.text=SubjTeacher;
         self.lblSave.text =@"Modificar";
+        NSLog(@"Modificar");
+
     }
 }
 
 - (void)didReceiveMemoryWarning {
-   // [super didReceiveMemoryWarning];
+   [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (IBAction)btnSave:(id)sender {
     
@@ -66,17 +61,15 @@ NSString *alerta;
             [self EditSubject];
         }
         [self alertaRegistro];
-        self.txtSubjects.text = nil;
-        self.txtNameTeach.text = nil;
+     // self.txtSubjects.text = nil;
+       // self.txtNameTeach.text = nil;
      }
 }
-
 
 -(void) SaveSubject{
     PFObject *object = [PFObject objectWithClassName:@"Subjects"];
     object[@"subject"] = self.txtSubjects.text;
     object[@"teacher"] = self.txtNameTeach.text;
-    
     [object pinInBackground];
     [object saveInBackground];
     alerta=@"Guardado correctamente";
@@ -84,8 +77,8 @@ NSString *alerta;
 
 -(void) EditSubject{
     PFQuery *query = [PFQuery queryWithClassName:@"Subjects"];
-    [query getObjectInBackgroundWithId:@"LPDo9XOXlD" block:^(PFObject *subj, NSError *error) {
-        subj[@"subject"] = self.txtSubjects;
+    [query getObjectInBackgroundWithId:objectId block:^(PFObject *subj, NSError *error) {
+        subj[@"subject"] = self.txtSubjects.text;
         subj[@"teacher"] = self.txtNameTeach.text;
         [subj pinInBackground];
         [subj saveInBackground];

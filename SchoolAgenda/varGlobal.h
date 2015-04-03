@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 NSInteger flagSub;
-
+NSString *SubjName;
+NSString *SubjTeacher;
+NSString *objectId;
 @interface varGlobal : NSObject
 
 @end

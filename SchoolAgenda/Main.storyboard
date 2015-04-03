@@ -49,7 +49,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" id="umM-Fn-uZg">
-                                                    <rect key="frame" x="0.0" y="-3" width="1280" height="203.5"/>
+                                                    <rect key="frame" x="0.0" y="-3" width="1600" height="275"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Evento" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oLd-F5-Ueq" userLabel="txtEvent">
@@ -394,7 +394,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" id="1X2-Km-z5t">
-                                                    <rect key="frame" x="-1" y="-3.5" width="1280" height="177"/>
+                                                    <rect key="frame" x="-1" y="-3.5" width="1600" height="220.5"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dom" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="p2F-8m-Yfh" userLabel="lblDom">
@@ -683,7 +683,7 @@
                                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="jnQ-wM-FMi" userLabel="nbtnAdd">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
-                                                <action selector="nbtnAdd:" destination="HTu-F9-I5T" id="WhY-Ro-0uf"/>
+                                                <action selector="nbtnAdd:" destination="HTu-F9-I5T" id="aeH-ze-VfR"/>
                                                 <segue destination="lH4-Yh-zL2" kind="modal" identifier="segueListSubToAddSubj" id="Dhf-0Y-Y2b"/>
                                             </connections>
                                         </barButtonItem>
@@ -1062,9 +1062,9 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="wDJ-Iw-Uuh"/>
+        <segue reference="4ws-Mz-Fn1"/>
         <segue reference="9rR-Np-6Nw"/>
         <segue reference="h86-FL-Ldn"/>
-        <segue reference="wDJ-Iw-Uuh"/>
-        <segue reference="RF3-c4-Ogc"/>
     </inferredMetricsTieBreakers>
 </document>
