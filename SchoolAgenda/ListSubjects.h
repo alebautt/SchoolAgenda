@@ -15,5 +15,5 @@
 }
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UILabel *lblMsg;
-
+- (IBAction)nbtnAdd:(id)sender;
 @end

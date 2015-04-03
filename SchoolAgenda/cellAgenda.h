@@ -18,7 +18,11 @@
 
 
 @property (strong, nonatomic) IBOutlet UIView *cellSubj;
-
 @property (strong, nonatomic) IBOutlet UILabel *lblSubject;
+
+//listEvents
+
+@property (strong, nonatomic) IBOutlet UILabel *txtEvent;
+@property (strong, nonatomic) IBOutlet UILabel *txtDate;
 
 @end

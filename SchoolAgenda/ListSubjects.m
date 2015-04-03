@@ -8,40 +8,30 @@
 
 #import "ListSubjects.h"
 #import "cellAgenda.h"
-
+#import "Parse/Parse.h"
+#import <ParseUI/PFTableViewCell.h>
+#import <ParseUI/PFQueryTableViewController.h>
+//#import "Subjects.h"
+#import "varGlobal.h"
 
 @interface ListSubjects ()
-
 @end
-
 @implementation ListSubjects
 @synthesize tableView;
 NSString *seleccionado;
-
-UIAlertView     *alert;
+NSString *objectId;
+UIAlertView *alert;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self performSelector:@selector(retrieveFromParse)];
-//[query unpinInBackground];
-    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 /**********************************************************************************************
  Table Functions
@@ -78,18 +68,16 @@ UIAlertView     *alert;
 
 -(void) tableView:(UITableView *) tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
- //   seleccionado = indexPath.row;
-    seleccionado = [arraySubjects objectAtIndex:0];
-    
-    
-    
-  //  sele   = [datos objectAtIndex:0];
-
-   //[self AlertClic];
-    NSLog(@"%@ selec", seleccionado);
-    
-  
+    [self AlertClic];
+   // NSString *idSub;
+    PFObject *tempObject = [arraySubjects objectAtIndex:indexPath.row ];
+    objectId = tempObject.objectId;
+    NSLog(@"esto es id: %@",objectId);
 }
+
+
+
+//-------------------------------------------------------------------------------
 
 -(void) AlertClic{
     alert = [[UIAlertView alloc] initWithTitle:@"Agenda Escolar"
@@ -104,57 +92,25 @@ UIAlertView     *alert;
 clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if(buttonIndex==1){//Editar
-        [self performSegueWithIdentifier:@"segueListSubToEditSub" sender:self];
-
-          }
-    else if(buttonIndex==2){//eliminar
-               [self Delet];
-
+        flagSub = 1;
+        [self performSegueWithIdentifier:@"segueListSubToAddSubj" sender:self];
+        PFQuery *query = [PFQuery queryWithClassName:@"Subjects"];
+        [query getObjectInBackgroundWithId:arraySubjects  block:^(PFObject *gameScore, NSError *error) {
+            // Do something with the returned PFObject in the gameScore variable.
+            NSLog(@"%@", gameScore);
+        }];
     }
-  }
-
--(void)Delet{
-    
-     //  BOOL success = NO;
-   // success = [[ClassDataBase getSharedInstance]
-     //          deleteData:idee];
-    
-   /*
-    recupero un dato*****/
-    
-  /*  PFQuery *query = [PFQuery queryWithClassName:@"Subjects"];
-    [query getObjectInBackgroundWithId:@"DeTftJVJbA" block:^(PFObject *Subjects, NSError *error) {
-        // Do something with the returned PFObject in the gameScore variable.
-        NSLog(@"%@", Subjects);
-        int score = [[Subjects objectForKey:@"Subjects"] intValue];
-           NSLog(@"%d", score);
-    }];*/
-    
-    
-    PFQuery *query = [PFQuery queryWithClassName:@"Subjects"];
-    [query whereKey:@"objectId" equalTo:@"DeTftJVJbA"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            // The find succeeded.
-            NSLog(@"Successfully retrieved %d scores.", objects.count);
-            // Do something with the found objects
-            for (PFObject *object in objects) {
-                NSLog(@"%@", object.objectId);
-            }
-        } else {
-            // Log details of the failure
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
-    }];
-    
-
+    else if(buttonIndex==2){//eliminar
+ //       UITableViewCell *cell = (UITableViewCell*);
+       // NSIndexPath *indexPath = [tableView indexPathForCell:cell];
+        
+  
+    }
 }
 
 
 -(void) retrieveFromParse{
     PFQuery *query =[PFQuery queryWithClassName:@"Subjects"];
-    //[query unpinInBackground];
-    
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error)
         {
@@ -162,6 +118,10 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
         }
         [tableView reloadData];
     }];
-  
+}
+
+- (IBAction)nbtnAdd:(id)sender {
+    flagSub = 0;
+    
 }
 @end

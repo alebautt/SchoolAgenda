@@ -7,6 +7,7 @@
 //
 
 #import "Subjects.h"
+#import "varGlobal.h"
 
 UIAlertView *alert;
 NSString *alerta;
@@ -15,13 +16,26 @@ NSString *alerta;
 
 @implementation Subjects
 
+@synthesize txtNameTeach;
+@synthesize txtSubjects;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    if(flagSub == 0)//agregar materia
+    {
+        NSLog(@"agregar materia");
+        self.lblSave.text=@"Guardar";
+    }
+    else if(flagSub == 1)
+    {
+        NSLog(@"modifica materia");
+        self.lblSave.text =@"Modificar";
+    }
 }
 
 - (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
+   // [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
@@ -36,22 +50,47 @@ NSString *alerta;
 */
 
 - (IBAction)btnSave:(id)sender {
+    
     if([self.txtSubjects.text isEqualToString:@""]){
       alerta=@"Verifica que hayas ingresado una materia";
         [self alertaRegistro];
     }
     else{
-        PFObject *object = [PFObject objectWithClassName:@"Subjects"];
-        object[@"subject"] = self.txtSubjects.text;
-        object[@"teacher"] = self.txtNameTeach.text;
-  
-        [object pinInBackground];
-        [object saveInBackground];
-        alerta=@"Guardado correctamente";
+        
+        if(flagSub == 0)  //add
+        {
+            [self SaveSubject];
+        }
+        else if(flagSub == 1)//edit
+        {
+            [self EditSubject];
+        }
         [self alertaRegistro];
         self.txtSubjects.text = nil;
         self.txtNameTeach.text = nil;
      }
+}
+
+
+-(void) SaveSubject{
+    PFObject *object = [PFObject objectWithClassName:@"Subjects"];
+    object[@"subject"] = self.txtSubjects.text;
+    object[@"teacher"] = self.txtNameTeach.text;
+    
+    [object pinInBackground];
+    [object saveInBackground];
+    alerta=@"Guardado correctamente";
+}
+
+-(void) EditSubject{
+    PFQuery *query = [PFQuery queryWithClassName:@"Subjects"];
+    [query getObjectInBackgroundWithId:@"LPDo9XOXlD" block:^(PFObject *subj, NSError *error) {
+        subj[@"subject"] = self.txtSubjects;
+        subj[@"teacher"] = self.txtNameTeach.text;
+        [subj pinInBackground];
+        [subj saveInBackground];
+    }];
+     alerta=@"modificado correctamente";
 }
 
 -(void) alertaRegistro{

@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
+@interface ListEvents : UIViewController<UITableViewDelegate, UIApplicationDelegate>
+{
+    NSArray *arrayEvents;
+}
+- (IBAction)btnCompartir:(id)sender;
 
-@interface ListEvents : UIViewController
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UILabel *lblMsg;
 
 @end

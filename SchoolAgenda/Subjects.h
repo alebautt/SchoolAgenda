@@ -19,5 +19,6 @@
 //buttons
 - (IBAction)btnSave:(id)sender;
 
+@property (strong, nonatomic) IBOutlet UILabel *lblSave;
 
 @end

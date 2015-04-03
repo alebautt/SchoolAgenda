@@ -51,6 +51,10 @@
 		B0EDF7B31ACCBD0200CD7225 /* Horario.m in Sources */ = {isa = PBXBuildFile; fileRef = B0EDF7B21ACCBD0200CD7225 /* Horario.m */; };
 		B0EDF7B61ACCBEA400CD7225 /* ListEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = B0EDF7B51ACCBEA400CD7225 /* ListEvents.m */; };
 		B0EDF7B91ACCBEC600CD7225 /* Events.m in Sources */ = {isa = PBXBuildFile; fileRef = B0EDF7B81ACCBEC600CD7225 /* Events.m */; };
+		B0EDF7BE1ACE0E3F00CD7225 /* varGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = B0EDF7BD1ACE0E3F00CD7225 /* varGlobal.m */; };
+		B0EDF7C01ACE6D3A00CD7225 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0EDF7BF1ACE6D3A00CD7225 /* Accounts.framework */; };
+		B0EDF7C21ACE6D5300CD7225 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0EDF7C11ACE6D5300CD7225 /* Twitter.framework */; };
+		B0EDF7C41ACE6D5D00CD7225 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0EDF7C31ACE6D5D00CD7225 /* Social.framework */; };
 		B0FAD74F1AB2300A0046F86F /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = B0FAD74D1AB2300A0046F86F /* camera.png */; };
 /* End PBXBuildFile section */
 
@@ -124,6 +128,11 @@
 		B0EDF7B51ACCBEA400CD7225 /* ListEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListEvents.m; sourceTree = "<group>"; };
 		B0EDF7B71ACCBEC600CD7225 /* Events.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Events.h; sourceTree = "<group>"; };
 		B0EDF7B81ACCBEC600CD7225 /* Events.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Events.m; sourceTree = "<group>"; };
+		B0EDF7BC1ACE0E3F00CD7225 /* varGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = varGlobal.h; sourceTree = "<group>"; };
+		B0EDF7BD1ACE0E3F00CD7225 /* varGlobal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = varGlobal.m; sourceTree = "<group>"; };
+		B0EDF7BF1ACE6D3A00CD7225 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		B0EDF7C11ACE6D5300CD7225 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		B0EDF7C31ACE6D5D00CD7225 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		B0FAD74D1AB2300A0046F86F /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = camera.png; path = img/camera.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -132,6 +141,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0EDF7C41ACE6D5D00CD7225 /* Social.framework in Frameworks */,
+				B0EDF7C21ACE6D5300CD7225 /* Twitter.framework in Frameworks */,
+				B0EDF7C01ACE6D3A00CD7225 /* Accounts.framework in Frameworks */,
 				B020DC2B1AB184F800BB1982 /* libsqlite3.dylib in Frameworks */,
 				B020DC291AB184F000BB1982 /* libz.dylib in Frameworks */,
 				B020DC271AB184AC00BB1982 /* SystemConfiguration.framework in Frameworks */,
@@ -184,6 +196,8 @@
 		B010DC041AB0031C0010FAEF /* SchoolAgenda */ = {
 			isa = PBXGroup;
 			children = (
+				B0EDF7BC1ACE0E3F00CD7225 /* varGlobal.h */,
+				B0EDF7BD1ACE0E3F00CD7225 /* varGlobal.m */,
 				B010DC091AB0031C0010FAEF /* AppDelegate.h */,
 				B010DC0A1AB0031C0010FAEF /* AppDelegate.m */,
 				B010DC0C1AB0031C0010FAEF /* Home.h */,
@@ -263,6 +277,9 @@
 		B020DC0A1AB183C000BB1982 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B0EDF7C31ACE6D5D00CD7225 /* Social.framework */,
+				B0EDF7C11ACE6D5300CD7225 /* Twitter.framework */,
+				B0EDF7BF1ACE6D3A00CD7225 /* Accounts.framework */,
 				B020DC2A1AB184F800BB1982 /* libsqlite3.dylib */,
 				B020DC281AB184F000BB1982 /* libz.dylib */,
 				B020DC261AB184AC00BB1982 /* SystemConfiguration.framework */,
@@ -414,6 +431,7 @@
 				B0EDF7B31ACCBD0200CD7225 /* Horario.m in Sources */,
 				B020DC091AB1806400BB1982 /* addUser.m in Sources */,
 				B0EDF7B61ACCBEA400CD7225 /* ListEvents.m in Sources */,
+				B0EDF7BE1ACE0E3F00CD7225 /* varGlobal.m in Sources */,
 				B0E126221AB2B6E300650870 /* Subjects.m in Sources */,
 				B010DC7C1AB0B0170010FAEF /* cellAgenda.m in Sources */,
 			);
