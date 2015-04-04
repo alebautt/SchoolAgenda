@@ -11,6 +11,8 @@ NSInteger flagSub;
 NSString *SubjName;
 NSString *SubjTeacher;
 NSString *objectId;
+NSString *objectIdEvent;
 @interface varGlobal : NSObject
+
 
 @end

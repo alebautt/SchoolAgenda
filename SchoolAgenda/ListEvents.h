@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import <Accounts/Accounts.h>
+#import <Social/Social.h>
+#import <Twitter/Twitter.h>
+
 @interface ListEvents : UIViewController<UITableViewDelegate, UIApplicationDelegate>
 {
     NSArray *arrayEvents;
@@ -16,5 +20,6 @@
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UILabel *lblMsg;
+- (IBAction)btnInfo:(id)sender;
 
 @end

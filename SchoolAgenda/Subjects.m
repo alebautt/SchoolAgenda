@@ -71,8 +71,15 @@ NSString *alerta;
     object[@"subject"] = self.txtSubjects.text;
     object[@"teacher"] = self.txtNameTeach.text;
     [object pinInBackground];
-    [object saveInBackground];
-    alerta=@"Guardado correctamente";
+    if([object saveInBackground]){
+        self.txtSubjects.text = NULL;
+        self.txtNameTeach.text = NULL;
+         alerta=@"Guardado correctamente";
+    }
+    else{
+        alerta=@"algo ocurrio, no se pudo guardar :'( ";
+    }
+    
 }
 
 -(void) EditSubject{
@@ -81,7 +88,11 @@ NSString *alerta;
         subj[@"subject"] = self.txtSubjects.text;
         subj[@"teacher"] = self.txtNameTeach.text;
         [subj pinInBackground];
-        [subj saveInBackground];
+        //[subj saveInBackground];
+        if([subj saveInBackground]){
+            self.txtSubjects.text = nil;
+             self.txtNameTeach.text = nil;
+        }
     }];
      alerta=@"modificado correctamente";
 }

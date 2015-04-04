@@ -8,6 +8,9 @@
 
 #import "ListEvents.h"
 #import "cellAgenda.h"
+#import "varGlobal.h"
+
+//#import <QuartzCore/QuartzCore.h>
 
 UIAlertView     *alert;
 
@@ -17,7 +20,8 @@ UIAlertView     *alert;
 
 @implementation ListEvents
 @synthesize tableView;
-
+NSDate *date;
+NSMutableArray *datos;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -70,13 +74,27 @@ UIAlertView     *alert;
     cellAgenda *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     PFObject *tempObject = [arrayEvents objectAtIndex:indexPath.row];
     cell.txtEvent.text = [tempObject objectForKey:@"event"];
-     cell.txtDate.text = [tempObject objectForKey:@"fecha"];
+    datos = arrayEvents[indexPath.row];
+    
+    NSDate *fecha = [tempObject objectForKey:@"fecha"];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    NSString *fecha_str = [dateFormatter stringFromDate:fecha];
+     cell.txtDate.text = fecha_str;
+    
+   // cell.txtEvent.layer.borderColor = [[UIColor redColor] CGColor];
+    cell.txtEvent.layer.borderColor =[UIColor redColor].CGColor;
+    
+    //[arrayEvents orderByAscending:@"fecha"];
+    
     return cell;
 }
 
 -(void) tableView:(UITableView *) tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self AlertClic];
+    PFObject *tempObject = [arrayEvents objectAtIndex:indexPath.row ];
+    objectIdEvent = tempObject.objectId;
+    NSLog(@"esto es id: %@",objectId);
 }
 
 //Deleting row from parse dot com
@@ -92,13 +110,21 @@ UIAlertView     *alert;
 //-------------------------------------------------------------------------------
 
 
+- (void)alertView:(UIAlertView *)alertView
+clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if(buttonIndex==1){//Editar
+        [self UpdateStatus];
+        
+    }
+   }
 
 -(void) AlertClic{
     alert = [[UIAlertView alloc] initWithTitle:@"Agenda Escolar"
                                        message:@"Estatus del vento"
                                       delegate:self
-                             cancelButtonTitle:@"Cancelar"
-                             otherButtonTitles:@"Terminado", @"Pendiente", nil];
+                             cancelButtonTitle:@"Sigue pendiente"
+                             otherButtonTitles:@"Terminado", nil];
     [alert show];
 }
 /*
@@ -117,33 +143,47 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
 }
 */
 
+-(void) UpdateStatus{
+    PFQuery *query = [PFQuery queryWithClassName:@"Events"];
+    [query getObjectInBackgroundWithId:objectIdEvent block:^(PFObject *subj, NSError *error) {
+        subj[@"status"] = @1;
+        [subj saveInBackground];
+    }];
+    
+}
 
 -(void) retrieveFromParse{
     PFQuery *query =[PFQuery queryWithClassName:@"Events"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+         [query orderByAscending:@"fecha"];
         if (!error)
         {
             arrayEvents = [[NSArray alloc] initWithArray:objects];
         }
-        [tableView reloadData];
+        // Sorts the results in ascending order by the score field
+       
+         [tableView reloadData];
     }];
+    
+    
 }
 - (IBAction)btnCompartir:(id)sender {
-  /*  if(arrayEvents.count==0)
+   if(arrayEvents.count==0)
     {
     self.lblMsg.text=@"No hay evento que compartir";
     }
     else{
-    
+        cellAgenda *cell;
         NSString                    *strMsg;
         NSArray                     *activityItems;
-        UIImage                     *imgShare;
+      //  UIImage                     *imgShare;
         UIActivityViewController    *actVC;
         
-       // imgShare = [UIImage imageNamed:@"chavo.png"];
-      //  strMsg = [self.lblSelectedName.text stringByAppendingString: @" fué seleccionado"];
+       // imgShare =  [UIImage imageWithData:[dato objectAtIndex:4]];
+        strMsg = [NSString stringWithFormat: @"de mi agenda les comparto un evento: %@",datos];
+        NSLog(@"%@", strMsg);
         
-        activityItems = @[imgShare, strMsg];
+       // activityItems = @[imgShare, strMsg];
         
         //Init activity view controller
         actVC = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
@@ -151,7 +191,13 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
         
         [self presentViewController:actVC animated:YES completion:nil];
 
-    }*/
+
     
+    }
+    
+
+}
+- (IBAction)btnInfo:(id)sender {
+    [self AlertClic];
 }
 @end

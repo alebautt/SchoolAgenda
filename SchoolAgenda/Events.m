@@ -7,6 +7,9 @@
 //
 
 #import "Events.h"
+#import "varGlobal.h"
+
+
 UIAlertView *alert;
 NSString *alerta;
 
@@ -18,13 +21,20 @@ NSString *alerta;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"hh:mma dd/MMM"];
+    NSString *dateString = [dateFormat stringFromDate:dateString];
+    self.txtFecha.text = dateString;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+
 
 - (IBAction)btnSave:(id)sender {
     if([self.txtEvent.text isEqualToString:@""]){
@@ -48,17 +58,14 @@ NSString *alerta;
     [alert show];
 }
 
+
 -(void) SaveEvent{
     PFObject *object = [PFObject objectWithClassName:@"Events"];
     object[@"event"] = self.txtEvent.text;
     object[@"description"] = self.txtDescription.text;
     object[@"fecha"] = self.dpFecha.date;
-    
-    
-    
-    NSDate *date = [NSDate date];
-  //  NSData *data = [@"foo" dataUsingEncoding:NSUTF8StringEncoding];
-    
+    object[@"status"] = @0;
+
     [object pinInBackground];
     [object saveInBackground];
     alerta=@"Guardado correctamente";

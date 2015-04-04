@@ -21,7 +21,8 @@
     self.cellSubj.layer.borderWidth =1;
     self.cellSubj.clipsToBounds = YES;
     self.cellSubj.layer.cornerRadius =9;
-}
+    
+   }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
