@@ -16,5 +16,6 @@
 @property (strong, nonatomic) IBOutlet UIDatePicker *dpHora;
 - (IBAction)btnSave:(id)sender;
 @property (strong, nonatomic) IBOutlet UITextField *txtDia;
+@property (strong, nonatomic) IBOutlet UITextField *txtAula;
 
 @end

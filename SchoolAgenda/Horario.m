@@ -33,12 +33,27 @@ NSString *alerta;
                                       delegate:self
                              cancelButtonTitle:@"Cancelar"
                              otherButtonTitles:@"Lunes", @"Martes",@"Miercoles",@"Jueves",@"Viernes",@"Sabado",@"Domingo", nil];
-    [alert show];
+                                      [alert show];
+    
+
 }
+
+
+- (void)alertView:(UIAlertView *)alertView
+clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    // self.txtMateria.text = [[alerta tx:0] text];
+    
+    
+    
+   // NSLog(@"%ld esto es butto",o);
+    
+    }
+
 
 - (IBAction)txtDia:(id)sender {
       [self AlertDia];
-}
+  }
 
 - (IBAction)btnSave:(id)sender {
     
@@ -65,10 +80,12 @@ NSString *alerta;
     object[@"dia"] = self.txtDia.text;
     object[@"materia"] = self.txtMateria.text;
     object[@"hora"] = self.dpHora.date;
+    object[@"aula"] = self.txtAula.text;
     [object pinInBackground];
     if([object saveInBackground]){
         self.txtMateria.text = NULL;
         self.txtDia.text = NULL;
+        self.txtAula.text = NULL;
         alerta=@"Guardado correctamente";
     }
 }

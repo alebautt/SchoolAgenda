@@ -24,5 +24,7 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *txtEvent;
 @property (strong, nonatomic) IBOutlet UILabel *txtDate;
+@property (strong, nonatomic) IBOutlet UILabel *txtDesc;
+@property (strong, nonatomic) IBOutlet UIImageView *imgStatus;
 
 @end

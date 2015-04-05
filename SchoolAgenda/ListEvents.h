@@ -22,4 +22,5 @@
 @property (strong, nonatomic) IBOutlet UILabel *lblMsg;
 - (IBAction)btnInfo:(id)sender;
 
+
 @end

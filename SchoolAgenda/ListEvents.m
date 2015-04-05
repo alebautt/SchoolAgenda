@@ -63,6 +63,7 @@ NSMutableArray *datos;
     cellAgenda *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     PFObject *tempObject = [arrayEvents objectAtIndex:indexPath.row];
     cell.txtEvent.text = [tempObject objectForKey:@"event"];
+     cell.txtDesc.text = [tempObject objectForKey:@"description"];
     datos = arrayEvents[indexPath.row];
     NSDate *fecha = [tempObject objectForKey:@"fecha"];
 
@@ -71,6 +72,8 @@ NSMutableArray *datos;
       // NSLog(@"%@", (long)stat);
 
     if (value == 1) {
+       
+        cell.imgStatus.image = [UIImage imageNamed:@"calif.png"];
       //  self.cellSubj.layer.borderColor =[UIColor clearColor].CGColor;
       //  cell.backgroundColor = [UIColor greenColor];
       // =[UIColor colorWithRed:0.95 green:0.95 blue:0.65 alpha:1];

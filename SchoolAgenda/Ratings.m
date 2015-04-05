@@ -41,7 +41,7 @@ NSString *alerta;
 -(void) SaveRatings{
     PFObject *object = [PFObject objectWithClassName:@"Ratings"];
     object[@"materia"] = self.txtMateria.text;
-    object[@"calificacion"] = self.txtRating.text;
+    object[@"calificaciones"] = self.txtRating.text;
     object[@"notas"] = self.txtNotes.text;
     [object pinInBackground];
     if([object saveInBackground]){
@@ -70,4 +70,23 @@ NSString *alerta;
           }
 
 }
+/*
+- (void)alertView:(UIAlertView *)alertView
+clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+   // self.txtMateria.text = [[alerta tx:0] text];
+    
+   
+    
+    if(buttonIndex==1){//Editar
+        [self EditParse];
+        flagSub = 1;// y si lo pones abajo??????????
+        [self performSegueWithIdentifier:@"segueListSubToAddSubj" sender:self];
+    }
+    else if(buttonIndex==2){//eliminar
+        [self DeleteParse];
+    }
+}*/
+
+
 @end
