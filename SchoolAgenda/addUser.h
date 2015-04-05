@@ -22,6 +22,5 @@
 
 //buttons
 - (IBAction)btnSave:(id)sender;
-- (IBAction)btnCancel:(id)sender;
 - (IBAction)btnFoto:(id)sender;
 @end

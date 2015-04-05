@@ -1,18 +1,18 @@
 //
-//  addRatings.m
+//  ListRatings.m
 //  SchoolAgenda
 //
-//  Created by Alejandra B on 18/03/15.
+//  Created by Alejandra B on 05/04/15.
 //  Copyright (c) 2015 alebautista. All rights reserved.
 //
 
-#import "addRatings.h"
+#import "ListRatings.h"
 
-@interface addRatings ()
+@interface ListRatings ()
 
 @end
 
-@implementation addRatings
+@implementation ListRatings
 
 - (void)viewDidLoad {
     [super viewDidLoad];

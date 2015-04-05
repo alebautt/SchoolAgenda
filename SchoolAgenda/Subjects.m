@@ -35,9 +35,15 @@ NSString *alerta;
         self.txtNameTeach.text=SubjTeacher;
         self.lblSave.text =@"Modificar";
         NSLog(@"Modificar");
-
     }
 }
+
+/*-(void)initController
+{
+}
+*/
+
+
 
 - (void)didReceiveMemoryWarning {
    [super didReceiveMemoryWarning];

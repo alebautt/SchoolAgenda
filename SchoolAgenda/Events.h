@@ -14,6 +14,5 @@
 @property (strong, nonatomic) IBOutlet UITextField *txtDescription;
 @property (strong, nonatomic) IBOutlet UIDatePicker *dpFecha;
 - (IBAction)btnSave:(id)sender;
-@property (strong, nonatomic) IBOutlet UITextField *txtFecha;
 
 @end

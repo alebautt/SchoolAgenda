@@ -11,7 +11,6 @@
 #import "Parse/Parse.h"
 #import <ParseUI/PFTableViewCell.h>
 #import <ParseUI/PFQueryTableViewController.h>
-//#import "Subjects.h"
 #import "varGlobal.h"
 
 @interface ListSubjects ()
@@ -43,8 +42,8 @@ UIAlertView *alert;
 //-------------------------------------------------------------------------------
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-  //  return arraySubjects.count;
-    if( arraySubjects.count > 0){
+ 
+   if( arraySubjects.count > 0){
         self.lblMsg.text=@"";
     }
     else{ self.lblMsg.text=@"No hay registro de Materias";}
@@ -63,18 +62,20 @@ UIAlertView *alert;
     cellAgenda *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     PFObject *tempObject = [arraySubjects objectAtIndex:indexPath.row];
     cell.lblSubject.text = [tempObject objectForKey:@"subject"];
+
     return cell;
 }
 
 -(void) tableView:(UITableView *) tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self AlertClic];
     PFObject *tempObject = [arraySubjects objectAtIndex:indexPath.row ];
     objectId = tempObject.objectId;
     NSLog(@"esto es id: %@",objectId);
+        [self AlertClic];
 }
 
 //-------------------------------------------------------------------------------
+
 
 -(void) AlertClic{
     alert = [[UIAlertView alloc] initWithTitle:@"Agenda Escolar"
@@ -90,9 +91,9 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if(buttonIndex==1){//Editar
         [self EditParse];
-        flagSub = 1;
-         [self performSegueWithIdentifier:@"segueListSubToAddSubj" sender:self];
-     }
+         flagSub = 1;// y si lo pones abajo??????????
+        [self performSegueWithIdentifier:@"segueListSubToAddSubj" sender:self];
+             }
     else if(buttonIndex==2){//eliminar
         [self DeleteParse];
     }
@@ -126,8 +127,9 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
 
 - (IBAction)nbtnAdd:(id)sender {
     flagSub = 0;
-  //  SubjName=@"";
     NSLog(@"Entrando a add");
-}
+
+      [self performSegueWithIdentifier:@"segueListSubToAddSubj" sender:self];
+   }
 
 @end

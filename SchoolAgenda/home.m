@@ -52,18 +52,17 @@ NSMutableArray *arrayUser;
 {
     return 1;
 }
-//-------------------------------------------------------------------------------
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return 4;
 }
-//-------------------------------------------------------------------------------
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 63;
 }
 
-//-------------------------------------------------------------------------------
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"cellAgenda";
@@ -100,8 +99,7 @@ NSMutableArray *arrayUser;
 
 -(void) tableView:(UITableView *) tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"Cell seleccionado");
-    if (indexPath.row == 0){
+        if (indexPath.row == 0){
      [self performSegueWithIdentifier:@"segueHomeToSubjects" sender:self];}
     else if (indexPath.row == 1){
         [self performSegueWithIdentifier:@"segueHomeToHorario" sender:self];
@@ -114,6 +112,7 @@ NSMutableArray *arrayUser;
     }
 
 }
+//-------------------------------------------------------------------------------
 
 /**********************************************************************************************
  BANNER
@@ -180,5 +179,5 @@ NSMutableArray *arrayUser;
     // [video resume];
     // [audio resume];
 }
-//___________________________________________
+//-------------------------------------------------------------------------------
 @end

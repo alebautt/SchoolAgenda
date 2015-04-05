@@ -22,10 +22,11 @@ NSString *alerta;
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+  /*  NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"hh:mma dd/MMM"];
     NSString *dateString = [dateFormat stringFromDate:dateString];
-    self.txtFecha.text = dateString;
+    self.txtFecha.text = dateString;*/
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,16 +34,12 @@ NSString *alerta;
     // Dispose of any resources that can be recreated.
 }
 
-
-
-
 - (IBAction)btnSave:(id)sender {
     if([self.txtEvent.text isEqualToString:@""]){
         alerta=@"Verifica que hayas ingresado un evento";
         [self alertaRegistro];
     }
-    else{
-        [self SaveEvent];
+    else{[self SaveEvent];
         [self alertaRegistro];
         self.txtEvent.text = nil;
         self.txtDescription.text = nil;
@@ -58,14 +55,12 @@ NSString *alerta;
     [alert show];
 }
 
-
 -(void) SaveEvent{
     PFObject *object = [PFObject objectWithClassName:@"Events"];
     object[@"event"] = self.txtEvent.text;
     object[@"description"] = self.txtDescription.text;
     object[@"fecha"] = self.dpFecha.date;
     object[@"status"] = @0;
-
     [object pinInBackground];
     [object saveInBackground];
     alerta=@"Guardado correctamente";

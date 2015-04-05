@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
 @interface Horario : UIViewController
+
+@property (strong, nonatomic) IBOutlet UITextField *txtMateria;
+- (IBAction)txtDia:(id)sender;
+@property (strong, nonatomic) IBOutlet UIDatePicker *dpHora;
+- (IBAction)btnSave:(id)sender;
+@property (strong, nonatomic) IBOutlet UITextField *txtDia;
 
 @end

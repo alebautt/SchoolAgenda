@@ -27,16 +27,6 @@ NSString *alerta;
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 - (IBAction)btnSave:(id)sender {
        if([self.txtName.text isEqualToString:@""] ||[self.txtEmail.text isEqualToString:@""] || [self.txtPassword.text isEqualToString:@""]){
            alerta=@"Es necesario ingresar los campos";
@@ -69,8 +59,6 @@ NSString *alerta;
         }
 }
 
-- (IBAction)btnCancel:(id)sender {
-}
 
 - (IBAction)btnFoto:(id)sender {
     [self AlertCamera];

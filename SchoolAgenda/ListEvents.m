@@ -10,39 +10,28 @@
 #import "cellAgenda.h"
 #import "varGlobal.h"
 
-//#import <QuartzCore/QuartzCore.h>
-
 UIAlertView     *alert;
 
 @interface ListEvents ()
-
 @end
 
 @implementation ListEvents
 @synthesize tableView;
 NSDate *date;
 NSMutableArray *datos;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+  //  cell.backgroundColor = [UIColor colorWithRed:0.95 green:0.95 blue:0.65 alpha:1];
+
     // Do any additional setup after loading the view.
     [self performSelector:@selector(retrieveFromParse)];
-
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 /**********************************************************************************************
  Table Functions
@@ -70,22 +59,39 @@ NSMutableArray *datos;
 //-------------------------------------------------------------------------------
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"cellEvent";
+    static NSString *CellIdentifier = @"cellAgenda";
     cellAgenda *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     PFObject *tempObject = [arrayEvents objectAtIndex:indexPath.row];
     cell.txtEvent.text = [tempObject objectForKey:@"event"];
     datos = arrayEvents[indexPath.row];
-    
     NSDate *fecha = [tempObject objectForKey:@"fecha"];
+
+    NSString *stat = [tempObject objectForKey:@"status"];
+    int value = [stat intValue];
+      // NSLog(@"%@", (long)stat);
+
+    if (value == 1) {
+      //  self.cellSubj.layer.borderColor =[UIColor clearColor].CGColor;
+      //  cell.backgroundColor = [UIColor greenColor];
+      // =[UIColor colorWithRed:0.95 green:0.95 blue:0.65 alpha:1];
+        
+        UIColor *altCellColor = [UIColor colorWithRed:243/255. green:13/255. blue:250/255. alpha:1];
+        cell.backgroundColor = altCellColor;
+        
+        NSLog(@"estatus terminado");
+    }else {
+        cell.backgroundColor =  [UIColor clearColor];
+    }
+    
+    
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
-    NSString *fecha_str = [dateFormatter stringFromDate:fecha];
-     cell.txtDate.text = fecha_str;
+    NSString *fecha_evt = [dateFormatter stringFromDate:fecha];
+     cell.txtDate.text = fecha_evt;
     
-   // cell.txtEvent.layer.borderColor = [[UIColor redColor] CGColor];
-    cell.txtEvent.layer.borderColor =[UIColor redColor].CGColor;
+ //   cell.txtEvent.layer.borderColor =[UIColor redColor].CGColor;
+   // NSLog(@"carga");
     
-    //[arrayEvents orderByAscending:@"fecha"];
     
     return cell;
 }
@@ -97,51 +103,25 @@ NSMutableArray *datos;
     NSLog(@"esto es id: %@",objectId);
 }
 
-//Deleting row from parse dot com
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Remove the row from data model
-    PFObject *object = [arrayEvents objectAtIndex:indexPath.row];
-    [object deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        //[self refreshTable:nil];
-    }];
-}
-
-//-------------------------------------------------------------------------------
-
-
-- (void)alertView:(UIAlertView *)alertView
-clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if(buttonIndex==1){//Editar
-        [self UpdateStatus];
-        
-    }
-   }
-
 -(void) AlertClic{
     alert = [[UIAlertView alloc] initWithTitle:@"Agenda Escolar"
                                        message:@"Estatus del vento"
                                       delegate:self
-                             cancelButtonTitle:@"Sigue pendiente"
-                             otherButtonTitles:@"Terminado", nil];
+                             cancelButtonTitle:@"Pendiente"
+                             otherButtonTitles:@"Terminado", @"Eliminar", nil];
     [alert show];
 }
-/*
+
 - (void)alertView:(UIAlertView *)alertView
 clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if(buttonIndex==1){//Editar
-        flagSub = 1;
-        [self performSegueWithIdentifier:@"segueListSubToAddSubj" sender:self];
-        
+    if(buttonIndex==1){//terminado
+        [self UpdateStatus];
     }
     else if(buttonIndex==2){//eliminar
-        //        [self Delet];
-        
+        [self DeleteParse];
     }
 }
-*/
 
 -(void) UpdateStatus{
     PFQuery *query = [PFQuery queryWithClassName:@"Events"];
@@ -149,24 +129,29 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
         subj[@"status"] = @1;
         [subj saveInBackground];
     }];
-    
+}
+
+-(void) DeleteParse{
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    PFObject *object = [arrayEvents objectAtIndex:indexPath.row ];
+    [object deleteInBackground];
+    [object saveInBackground];
+    [self viewDidLoad];
 }
 
 -(void) retrieveFromParse{
     PFQuery *query =[PFQuery queryWithClassName:@"Events"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-         [query orderByAscending:@"fecha"];
-        if (!error)
+                 if (!error)
         {
             arrayEvents = [[NSArray alloc] initWithArray:objects];
+            NSLog(@"entra");
         }
-        // Sorts the results in ascending order by the score field
-       
+        [query orderByAscending:@"fecha"];
          [tableView reloadData];
     }];
-    
-    
 }
+
 - (IBAction)btnCompartir:(id)sender {
    if(arrayEvents.count==0)
     {
@@ -188,15 +173,10 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
         //Init activity view controller
         actVC = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
         actVC.excludedActivityTypes = [NSArray arrayWithObjects:UIActivityTypePrint, UIActivityTypeAssignToContact, UIActivityTypeCopyToPasteboard, UIActivityTypeAirDrop, nil];
-        
         [self presentViewController:actVC animated:YES completion:nil];
-
-
-    
     }
-    
-
 }
+
 - (IBAction)btnInfo:(id)sender {
     [self AlertClic];
 }
