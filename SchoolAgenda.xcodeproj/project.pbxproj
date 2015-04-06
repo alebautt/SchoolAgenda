@@ -42,6 +42,7 @@
 		B05E6F421AB62D8200812B09 /* list.png in Resources */ = {isa = PBXBuildFile; fileRef = B05E6F411AB62D8200812B09 /* list.png */; };
 		B05FF33A1AD2E9DA004A99F0 /* esferas.png in Resources */ = {isa = PBXBuildFile; fileRef = B05FF3391AD2E9DA004A99F0 /* esferas.png */; };
 		B05FF33C1AD2F406004A99F0 /* graduate.png in Resources */ = {isa = PBXBuildFile; fileRef = B05FF33B1AD2F406004A99F0 /* graduate.png */; };
+		B05FF33E1AD2FF86004A99F0 /* backg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B05FF33D1AD2FF86004A99F0 /* backg.jpg */; };
 		B08A95291ACCA4C5007EB0EE /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = B08A95281ACCA4C5007EB0EE /* cross.png */; };
 		B08A952C1ACCBC2A007EB0EE /* ListHorario.m in Sources */ = {isa = PBXBuildFile; fileRef = B08A952B1ACCBC2A007EB0EE /* ListHorario.m */; };
 		B0D4FEA91AD1C71C009030CC /* ListRatings.m in Sources */ = {isa = PBXBuildFile; fileRef = B0D4FEA81AD1C71C009030CC /* ListRatings.m */; };
@@ -122,6 +123,7 @@
 		B05E6F411AB62D8200812B09 /* list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = list.png; path = img/list.png; sourceTree = "<group>"; };
 		B05FF3391AD2E9DA004A99F0 /* esferas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = esferas.png; path = img/esferas.png; sourceTree = "<group>"; };
 		B05FF33B1AD2F406004A99F0 /* graduate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = graduate.png; path = img/graduate.png; sourceTree = "<group>"; };
+		B05FF33D1AD2FF86004A99F0 /* backg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = backg.jpg; path = img/backg.jpg; sourceTree = "<group>"; };
 		B08A95281ACCA4C5007EB0EE /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cross.png; path = img/cross.png; sourceTree = "<group>"; };
 		B08A952A1ACCBC2A007EB0EE /* ListHorario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListHorario.h; sourceTree = "<group>"; };
 		B08A952B1ACCBC2A007EB0EE /* ListHorario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListHorario.m; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 		B010DC7D1AB0B07F0010FAEF /* img */ = {
 			isa = PBXGroup;
 			children = (
+				B05FF33D1AD2FF86004A99F0 /* backg.jpg */,
 				B05FF33B1AD2F406004A99F0 /* graduate.png */,
 				B05FF3391AD2E9DA004A99F0 /* esferas.png */,
 				B0D4FEB81AD23DB8009030CC /* ok.jpeg */,
@@ -422,6 +425,7 @@
 			files = (
 				B05FF33C1AD2F406004A99F0 /* graduate.png in Resources */,
 				B0E126261AB2DDA600650870 /* settings.png in Resources */,
+				B05FF33E1AD2FF86004A99F0 /* backg.jpg in Resources */,
 				B010DC8D1AB0F1D80010FAEF /* horario.png in Resources */,
 				B010DC951AB15DE90010FAEF /* perfil.png in Resources */,
 				B010DC8B1AB0F0E90010FAEF /* materia.png in Resources */,

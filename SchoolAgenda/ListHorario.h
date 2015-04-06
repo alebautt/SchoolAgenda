@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
-@interface ListHorario : UIViewController
+@interface ListHorario : UIViewController<UITableViewDelegate, UIApplicationDelegate>
+{
+    NSArray *arraySubjects;
+}
+
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end

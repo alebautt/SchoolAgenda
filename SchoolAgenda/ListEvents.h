@@ -16,7 +16,6 @@
 {
     NSArray *arrayEvents;
 }
-- (IBAction)btnCompartir:(id)sender;
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 

@@ -71,7 +71,7 @@ UIAlertView *alert;
 {
     PFObject *tempObject = [arraySubjects objectAtIndex:indexPath.row ];
     objectId = tempObject.objectId;
-    NSLog(@"esto es id: %@",objectId);
+   // NSLog(@"esto es id: %@",objectId);
         [self AlertClic];
 }
 

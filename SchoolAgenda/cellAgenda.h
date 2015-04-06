@@ -28,8 +28,27 @@
 
 
 //ListRatings
-@property (strong, nonatomic) IBOutlet UILabel *lblMat;
+@property (strong, nonatomic) IBOutlet UILabel *txtMateri;
 
-@property (strong, nonatomic) IBOutlet UILabel *lblCalific;
+@property (strong, nonatomic) IBOutlet UILabel *txtCal;
+
+//ListHorario
+//Hora
+@property (strong, nonatomic) IBOutlet UILabel *lblFDomingo;
+@property (strong, nonatomic) IBOutlet UILabel *lblFLunes;
+@property (strong, nonatomic) IBOutlet UILabel *lblFMartes;
+@property (strong, nonatomic) IBOutlet UILabel *lblFMiercoles;
+@property (strong, nonatomic) IBOutlet UILabel *lblFJueves;
+@property (strong, nonatomic) IBOutlet UILabel *lblFViernes;
+@property (strong, nonatomic) IBOutlet UILabel *lblFSabado;
+//ListHorario
+//Materia
+@property (strong, nonatomic) IBOutlet UILabel *lblMDom;
+@property (strong, nonatomic) IBOutlet UILabel *lblMLun;
+@property (strong, nonatomic) IBOutlet UILabel *lblMMar;
+@property (strong, nonatomic) IBOutlet UILabel *lblMMie;
+@property (strong, nonatomic) IBOutlet UILabel *lblMJue;
+@property (strong, nonatomic) IBOutlet UILabel *lblMVie;
+@property (strong, nonatomic) IBOutlet UILabel *lblMSab;
 
 @end
