@@ -92,7 +92,7 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if(buttonIndex==1){//Editar
         [self EditParse];
-         flagSub = 1;// y si lo pones abajo??????????
+         flagSub = 1;
         [self performSegueWithIdentifier:@"segueListSubToAddSubj" sender:self];
              }
     else if(buttonIndex==2){//eliminar

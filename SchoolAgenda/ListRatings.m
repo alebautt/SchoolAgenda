@@ -9,7 +9,8 @@
 #import "ListRatings.h"
 #import "cellAgenda.h"
 #import "Parse/Parse.h"
-
+#import <ParseUI/PFTableViewCell.h>
+#import <ParseUI/PFQueryTableViewController.h>
 @interface ListRatings ()
 
 @end
@@ -23,6 +24,7 @@ UIAlertView *alert;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+     [self performSelector:@selector(retrieveFromParse)];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,7 +48,7 @@ UIAlertView *alert;
 //-------------------------------------------------------------------------------
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 55;
+    return 56;
 }
 
 //-------------------------------------------------------------------------------
@@ -55,8 +57,10 @@ UIAlertView *alert;
     static NSString *CellIdentifier = @"cellAgenda";
     cellAgenda *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     PFObject *tempObject = [arrayRatings objectAtIndex:indexPath.row];
-    cell.lblMateria.text = [tempObject objectForKey:@"materia"];
-    cell.lblMateria.text = [tempObject objectForKey:@"calificaciones"];
+    cell.lblMat.text = [tempObject objectForKey:@"materia"];
+
+  //  cell.lblMateria.text = [tempObject objectForKey:@"materia"];
+ //   cell.lblCalif.text = [tempObject objectForKey:@"calificaciones"];
 
     return cell;
 }
@@ -66,7 +70,7 @@ UIAlertView *alert;
     //PFObject *tempObject = [arrayRatings objectAtIndex:indexPath.row ];
     //objectId = tempObject.objectId;
    // NSLog(@"esto es id: %@",objectId);
-    //[self AlertClic];
+    [self AlertClic];
 }
 
 //-------------------------------------------------------------------------------

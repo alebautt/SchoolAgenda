@@ -38,7 +38,7 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="22" sectionFooterHeight="22" id="0Jh-cg-NjG" userLabel="tblEvents">
-                                <rect key="frame" x="0.0" y="97" width="320" height="471"/>
+                                <rect key="frame" x="0.0" y="74" width="320" height="494"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -49,7 +49,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" id="umM-Fn-uZg">
-                                                    <rect key="frame" x="0.0" y="-3" width="320" height="74"/>
+                                                    <rect key="frame" x="0.0" y="-3" width="640" height="74"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Evento" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oLd-F5-Ueq" userLabel="txtEvent">
@@ -95,18 +95,6 @@
                                     <outlet property="delegate" destination="mUr-Rl-LO9" id="I6O-zx-ZHt"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="FPT-HZ-9Tw" userLabel="btnCompartir">
-                                <rect key="frame" x="0.0" y="64" width="320" height="33"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.76528495549999997" green="0.27925997850000001" blue="0.10560783379999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Compartir">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="btnCompartir:" destination="mUr-Rl-LO9" eventType="touchUpInside" id="uzG-uN-AjN"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -242,6 +230,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.15000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="esferas.png" id="ay5-pm-ZBH">
+                                <rect key="frame" x="-14" y="193" width="334" height="327"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
                             <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="H2f-A7-TdV" userLabel="ADBannerView">
                                 <rect key="frame" x="0.0" y="518" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
@@ -251,14 +243,14 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="perfil.png" id="IC1-au-IOe" userLabel="imgBckg">
-                                <rect key="frame" x="0.0" y="58" width="126" height="141"/>
+                                <rect key="frame" x="0.0" y="70" width="124" height="123"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="D5U-Xh-YEn" userLabel="lblUser">
                                 <rect key="frame" x="132" y="70" width="178" height="36"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <fontDescription key="fontDescription" name="STHeitiTC-Medium" family="Heiti TC" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <navigationBar contentMode="scaleToFill" id="uYb-Rr-Zw1">
@@ -342,10 +334,6 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="nT9-vI-WSo"/>
                                 </connections>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" alpha="0.19999999999999968" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="book.jpg" id="ay5-pm-ZBH">
-                                <rect key="frame" x="0.0" y="225" width="320" height="291"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -410,7 +398,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" id="1X2-Km-z5t">
-                                                    <rect key="frame" x="0.0" y="0.0" width="4160" height="576.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="4480" height="621"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dom" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RqH-Ba-ltn" userLabel="lblDom">
@@ -469,7 +457,7 @@
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" id="h0U-HG-Zu1">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="4160" height="576.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="4480" height="621"/>
                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dom" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7EH-ja-3Lr" userLabel="lblDom">
@@ -740,7 +728,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="fUX-gs-TTm" userLabel="tblSubjects">
                                 <rect key="frame" x="0.0" y="91" width="320" height="394"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <autoresizingMask key="autoresizingMask"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellAgenda" rowHeight="60" id="Frf-1j-lku" customClass="cellAgenda">
@@ -751,10 +739,10 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" id="ifa-7Y-vXM">
                                                     <rect key="frame" x="28" y="8" width="262" height="44"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zyS-To-ibU" userLabel="lblSubject">
-                                                            <rect key="frame" x="8" y="8" width="195" height="28"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zyS-To-ibU" userLabel="lblSubject">
+                                                            <rect key="frame" x="8" y="8" width="246" height="28"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" name="STHeitiTC-Medium" family="Heiti TC" pointSize="17"/>
                                                             <color key="textColor" red="0.310164628" green="0.310164628" blue="0.310164628" alpha="1" colorSpace="calibratedRGB"/>
@@ -969,20 +957,8 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QBS-cP-cuG" userLabel="btnCompartir">
-                                <rect key="frame" x="0.0" y="64" width="320" height="33"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.76528495549999997" green="0.27925997850000001" blue="0.10560783379999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Seleccionar materia">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="btnCompartir:" destination="mUr-Rl-LO9" eventType="touchUpInside" id="TCL-nH-Sc6"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="56" sectionHeaderHeight="22" sectionFooterHeight="22" id="ufg-IB-Grq" userLabel="tblRatings">
-                                <rect key="frame" x="0.0" y="137" width="320" height="431"/>
+                                <rect key="frame" x="0.0" y="80" width="320" height="488"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -993,20 +969,21 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" id="9Zs-gH-ied">
-                                                    <rect key="frame" x="0.0" y="0.5" width="320" height="55.5"/>
+                                                    <rect key="frame" x="0.0" y="0.5" width="640" height="111"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Materia" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="s5D-iA-Tcd" userLabel="lblMateria">
-                                                            <rect key="frame" x="31" y="5" width="258" height="21"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" name="STHeitiTC-Medium" family="Heiti TC" pointSize="20"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calificaciones" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="T3V-Bb-74P" userLabel="lblCalif">
-                                                            <rect key="frame" x="31" y="26" width="258" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Y1d-OC-zR1" userLabel="lblMat">
+                                                            <rect key="frame" x="159" y="8" width="42" height="21"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FFI-nn-s4g" userLabel="lblCalific">
+                                                            <rect key="frame" x="42" y="8" width="42" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -1015,8 +992,8 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="lblCalif" destination="T3V-Bb-74P" id="dW1-rg-i8H"/>
-                                            <outlet property="lblMateria" destination="s5D-iA-Tcd" id="yan-ka-47n"/>
+                                            <outlet property="lblCalific" destination="FFI-nn-s4g" id="C1U-gv-wiR"/>
+                                            <outlet property="lblMat" destination="Y1d-OC-zR1" id="Nxe-p7-Mdh"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1267,8 +1244,8 @@
     </scenes>
     <resources>
         <image name="back.png" width="24" height="24"/>
-        <image name="book.jpg" width="215" height="128"/>
         <image name="camera.png" width="128" height="128"/>
+        <image name="esferas.png" width="1600" height="1200"/>
         <image name="event.png" width="300" height="300"/>
         <image name="horarioimg.png" width="366" height="319"/>
         <image name="libros.png" width="506" height="414"/>
@@ -1283,10 +1260,10 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="oJV-NC-Lru"/>
-        <segue reference="cxB-XT-GQA"/>
+        <segue reference="HAs-Sv-j5R"/>
+        <segue reference="4ws-Mz-Fn1"/>
         <segue reference="7xG-Zw-GTl"/>
-        <segue reference="Ol1-gB-DW0"/>
-        <segue reference="wDJ-Iw-Uuh"/>
+        <segue reference="cxB-XT-GQA"/>
+        <segue reference="JlO-pM-dxe"/>
     </inferredMetricsTieBreakers>
 </document>

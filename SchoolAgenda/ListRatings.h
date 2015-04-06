@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
 @interface ListRatings : UIViewController<UITableViewDelegate, UIApplicationDelegate>
 {

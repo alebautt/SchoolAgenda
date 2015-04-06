@@ -19,7 +19,5 @@
 - (IBAction)btnCompartir:(id)sender;
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) IBOutlet UILabel *lblMsg;
-
 
 @end

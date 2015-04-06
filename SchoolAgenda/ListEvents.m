@@ -44,10 +44,7 @@ NSMutableArray *datos;
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     //  return arraySubjects.count;
-    if( arrayEvents.count > 0){
-        self.lblMsg.text=@"";
-    }
-    else{ self.lblMsg.text=@"No hay registro de Eventos";}
+   
     return arrayEvents.count;
 }
 //-------------------------------------------------------------------------------
@@ -82,7 +79,7 @@ NSMutableArray *datos;
       //  UIColor *altCellColor = [UIColor colorWithRed:243/255. green:13/255. blue:250/255. alpha:1];
         //cell.backgroundColor = altCellColor;
         
-        NSLog(@"estatus terminado");
+        NSLog(@"evento terminado");
     }else {
         cell.imgStatus.image = [UIImage imageNamed:@"noterm.png"];
 
@@ -106,7 +103,7 @@ NSMutableArray *datos;
 {
     PFObject *tempObject = [arrayEvents objectAtIndex:indexPath.row ];
     objectIdEvent = tempObject.objectId;
-    NSLog(@"esto es id: %@",objectId);
+//    NSLog(@"esto es id: %@",objectId);
     [self AlertClic];
 }
 
@@ -115,7 +112,7 @@ NSMutableArray *datos;
                                        message:@"Estatus del vento"
                                       delegate:self
                              cancelButtonTitle:@"Cancelar"
-                             otherButtonTitles:@"Terminado", @"Eliminar", nil];
+                             otherButtonTitles:@"Actividad Completada", @"Eliminar", @"Compartir", nil];
     [alert show];
 }
 
@@ -127,6 +124,30 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
     }
     else if(buttonIndex==2){//eliminar
         [self DeleteParse];
+    }
+    else if(buttonIndex==3){
+        if(arrayEvents.count==0)
+        {
+            NSLog(@"No hay evento que compartir");
+        }
+        else{
+            cellAgenda *cell;
+            NSString                    *strMsg;
+            NSArray                     *activityItems;
+            //  UIImage                     *imgShare;
+            UIActivityViewController    *actVC;
+            
+            // imgShare =  [UIImage imageWithData:[dato objectAtIndex:4]];
+            strMsg = [NSString stringWithFormat: @"de mi agenda les comparto un evento: %@",datos];
+            NSLog(@"%@", strMsg);
+            
+            // activityItems = @[imgShare, strMsg];
+            
+            //Init activity view controller
+            actVC = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
+            actVC.excludedActivityTypes = [NSArray arrayWithObjects:UIActivityTypePrint, UIActivityTypeAssignToContact, UIActivityTypeCopyToPasteboard, UIActivityTypeAirDrop, nil];
+            [self presentViewController:actVC animated:YES completion:nil];
+        }
     }
 }
 
@@ -161,29 +182,6 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
     }];
 }
 
-- (IBAction)btnCompartir:(id)sender {
-   if(arrayEvents.count==0)
-    {
-    self.lblMsg.text=@"No hay evento que compartir";
-    }
-    else{
-        cellAgenda *cell;
-        NSString                    *strMsg;
-        NSArray                     *activityItems;
-      //  UIImage                     *imgShare;
-        UIActivityViewController    *actVC;
-        
-       // imgShare =  [UIImage imageWithData:[dato objectAtIndex:4]];
-        strMsg = [NSString stringWithFormat: @"de mi agenda les comparto un evento: %@",datos];
-        NSLog(@"%@", strMsg);
-        
-       // activityItems = @[imgShare, strMsg];
-        
-        //Init activity view controller
-        actVC = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
-        actVC.excludedActivityTypes = [NSArray arrayWithObjects:UIActivityTypePrint, UIActivityTypeAssignToContact, UIActivityTypeCopyToPasteboard, UIActivityTypeAirDrop, nil];
-        [self presentViewController:actVC animated:YES completion:nil];
-    }
-}
+
 
 @end

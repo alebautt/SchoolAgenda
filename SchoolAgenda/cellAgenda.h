@@ -28,8 +28,8 @@
 
 
 //ListRatings
+@property (strong, nonatomic) IBOutlet UILabel *lblMat;
 
-@property (strong, nonatomic) IBOutlet UILabel *lblMateria;
-@property (strong, nonatomic) IBOutlet UILabel *lblCalif;
+@property (strong, nonatomic) IBOutlet UILabel *lblCalific;
 
 @end
