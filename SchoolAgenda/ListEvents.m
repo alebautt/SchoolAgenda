@@ -135,6 +135,8 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
     [query getObjectInBackgroundWithId:objectIdEvent block:^(PFObject *subj, NSError *error) {
         subj[@"status"] = @1;
         [subj saveInBackground];
+        [self viewDidLoad];
+
     }];
 }
 
