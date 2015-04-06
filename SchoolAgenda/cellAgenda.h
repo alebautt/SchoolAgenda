@@ -16,7 +16,6 @@
 
 //ListSubjects
 
-
 @property (strong, nonatomic) IBOutlet UIView *cellSubj;
 @property (strong, nonatomic) IBOutlet UILabel *lblSubject;
 
@@ -26,5 +25,11 @@
 @property (strong, nonatomic) IBOutlet UILabel *txtDate;
 @property (strong, nonatomic) IBOutlet UILabel *txtDesc;
 @property (strong, nonatomic) IBOutlet UIImageView *imgStatus;
+
+
+//ListRatings
+
+@property (strong, nonatomic) IBOutlet UILabel *lblMateria;
+@property (strong, nonatomic) IBOutlet UILabel *lblCalif;
 
 @end

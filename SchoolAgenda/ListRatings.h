@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ListRatings : UIViewController
+@interface ListRatings : UIViewController<UITableViewDelegate, UIApplicationDelegate>
+{
+    NSArray *arrayRatings;
+}
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end
