@@ -58,6 +58,7 @@ NSMutableArray *datos;
 
 //-------------------------------------------------------------------------------
 
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"cellAgenda";
     cellAgenda *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -73,17 +74,19 @@ NSMutableArray *datos;
 
     if (value == 1) {
        
-        cell.imgStatus.image = [UIImage imageNamed:@"calif.png"];
+        cell.imgStatus.image = [UIImage imageNamed:@"term.png"];
       //  self.cellSubj.layer.borderColor =[UIColor clearColor].CGColor;
       //  cell.backgroundColor = [UIColor greenColor];
       // =[UIColor colorWithRed:0.95 green:0.95 blue:0.65 alpha:1];
         
-        UIColor *altCellColor = [UIColor colorWithRed:243/255. green:13/255. blue:250/255. alpha:1];
-        cell.backgroundColor = altCellColor;
+      //  UIColor *altCellColor = [UIColor colorWithRed:243/255. green:13/255. blue:250/255. alpha:1];
+        //cell.backgroundColor = altCellColor;
         
         NSLog(@"estatus terminado");
     }else {
-        cell.backgroundColor =  [UIColor clearColor];
+        cell.imgStatus.image = [UIImage imageNamed:@"noterm.png"];
+
+        //cell.backgroundColor =  [UIColor clearColor];
     }
     
     
@@ -104,13 +107,14 @@ NSMutableArray *datos;
     PFObject *tempObject = [arrayEvents objectAtIndex:indexPath.row ];
     objectIdEvent = tempObject.objectId;
     NSLog(@"esto es id: %@",objectId);
+    [self AlertClic];
 }
 
 -(void) AlertClic{
     alert = [[UIAlertView alloc] initWithTitle:@"Agenda Escolar"
                                        message:@"Estatus del vento"
                                       delegate:self
-                             cancelButtonTitle:@"Pendiente"
+                             cancelButtonTitle:@"Cancelar"
                              otherButtonTitles:@"Terminado", @"Eliminar", nil];
     [alert show];
 }
@@ -180,7 +184,4 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
     }
 }
 
-- (IBAction)btnInfo:(id)sender {
-    [self AlertClic];
-}
 @end
