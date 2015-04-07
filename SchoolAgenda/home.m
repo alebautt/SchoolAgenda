@@ -31,9 +31,9 @@ NSMutableArray *arrayUser;
 
 -(void) datosPerfil{
     PFQuery *query = [PFQuery queryWithClassName:@"User"];
-   [query fromLocalDatastore];
+  // [query fromLocalDatastore];
     
-    [query getObjectInBackgroundWithId:@"d0gnqrq6ay" block:^(PFObject *user, NSError *error) {
+    [query getObjectInBackgroundWithId:@"fYltPV7pcV" block:^(PFObject *user, NSError *error) {
         // Do something with the returned PFObject in the gameScore variable.
         self.lblUser.text = user[@"username"];
         self.lblSchool.text = user[@"school"];
@@ -108,7 +108,7 @@ NSMutableArray *arrayUser;
        [self performSegueWithIdentifier:@"segueHomeToListEvent" sender:self];
     }
     else if (indexPath.row == 3){
-        [self performSegueWithIdentifier:@"segueHomeToRatings" sender:self];
+        [self performSegueWithIdentifier:@"segueHomeToCalif" sender:self];
     }
 
 }

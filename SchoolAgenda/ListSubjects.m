@@ -97,6 +97,8 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
              }
     else if(buttonIndex==2){//eliminar
         [self DeleteParse];
+        [self viewDidLoad];
+
     }
     }
 
@@ -123,8 +125,7 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
     PFObject *object = [arraySubjects objectAtIndex:indexPath.row ];
     [object deleteInBackground];
     [object saveInBackground];
-   [self viewDidLoad];
-}
+  }
 
 - (IBAction)nbtnAdd:(id)sender {
     flagSub = 0;

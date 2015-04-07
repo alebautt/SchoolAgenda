@@ -124,6 +124,7 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
     }
     else if(buttonIndex==2){//eliminar
         [self DeleteParse];
+          [self viewDidLoad];
     }
     else if(buttonIndex==3){
         if(arrayEvents.count==0)
